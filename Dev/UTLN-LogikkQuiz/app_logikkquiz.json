@@ -1,0 +1,558 @@
+{
+  "game": {
+    "total_questions": 10,
+    "difficulty_level": 1,
+    "answer_count": 3,
+    "settings_ranges": {
+      "questions_min": 5,
+      "questions_max": 20,
+      "difficulty_min": 1,
+      "difficulty_max": 3
+    }
+  },
+  "super_class": {
+    "folkevesen": "vesen",
+    "romvesen": "vesen",
+    "fabeldyr": "dyr",
+    "havuhyre": "dyr",
+    "mutantdyr": "dyr",
+    "godtevesen": "vesen"
+  },
+  "mutant_generator": {
+    "prefixes": [
+      "rune", "troll", "skygge", "snø", "måne", "tåke", "fjell", "boble", "hule", "gelé", "sjoko"
+    ],
+    "suffixes": [
+      "tass", "snute", "klump", "bølle", "fjomp", "sprett", "tut", "plask", "krabat", "imp"
+    ],
+    "base_animals": [
+      "katt", "mus", "elefant", "kenguru", "pingvin", "krabat", "frosk", "snegl", "gris", "høne", "and", "ugle", "rev", "kanin", "huggorm"
+    ],
+    "base_plants": [
+      "banan", "gulrot", "potet", "løk", "sopp", "busk", "mose", "tang"
+    ]
+  },
+  "entities": {
+    "folkevesen": [
+      "soppnisse",
+      "troll",
+      "nisse",
+      "bekkefant",
+      "mosegubbe",
+      "vetter",
+      "haugfolk",
+      "tusser",
+      "fossegrim",
+      "grauttusse",
+      "fjordnøkk",
+      "lysgnom",
+      "skogsvokter",
+      "rimtusse",
+      "bl\u00e5b\u00e6rnisse",
+      "trollunge",
+      "småtusse",
+      "tøysetroll"
+    ],
+    "romvesen": [
+      "glorp",
+      "blimp",
+      "zaxer",
+      "flim",
+      "trax",
+      "mork",
+      "plunk",
+      "vrex",
+      "snurp",
+      "klorpi",
+      "zønk",
+      "bømp",
+      "piprax",
+      "glimto",
+      "tuttek"
+    ],
+    "fabeldyr": [
+      "runetass",
+      "mjødnøff",
+      "tåkerev",
+      "nordlyskatt",
+      "runerev",
+      "tordenhare",
+      "glitterelg",
+      "snøfugl",
+      "månebjørn",
+      "fjærhest",
+      "gullgrevling",
+      "tåkefugl"
+    ],
+    "havuhyre": [
+      "fjordsnegle",
+      "tangnisse",
+      "sjøtusse",
+      "boblefisk",
+      "plaskeblekksprut",
+      "puddelhval",
+      "sjøkrabat",
+      "tangsnansen",
+      "brusfisk",
+      "bølgebie"
+    ],
+    "mutantdyr": [
+      "fjellhund",
+      "nissekatt",
+      "runeku",
+      "glittersau",
+      "tåkegris",
+      "snøgeit",
+      "månemus",
+      "pannekakeand",
+      "kakegris",
+      "fnisehøne",
+      "fjellpinnsvin",
+      "nordlys-ugle"
+    ],
+    "godtevesen": [
+      "lakrisnisse",
+      "gelévenn",
+      "sjokosnute",
+      "marsipanmår",
+      "kanelkrabat",
+      "sukkervenn",
+      "puddingnøff",
+      "isbit-imp",
+      "vaffelvokter",
+      "bærbølle"
+    ]
+  },
+  "properties": {
+    "folkevesen": [
+      "fniser i busken",
+      "hvisker i postkassa",
+      "danser på taksteinene",
+      "tusler under sofaen",
+      "gjemmer seg i sokkeskuffen",
+      "klikker i kjelleren",
+      "bobler i gryta",
+      "gliser bak runesteinen",
+      "brummer i matboksen",
+      "overrasker en potet i kjøkkenskuffen",
+      "snubler i snøfonna",
+      "tuller i tidsmaskina",
+      "nynner i kosteskapet",
+      "gjemmer seg i ryggsekken",
+      "vinker fra do-lokket",
+      "snorker i hatten"
+    ],
+    "romvesen": [
+      "svever i stua",
+      "snurrer i trillebåra",
+      "blunker i kjøleskapet",
+      "piper i støvelen",
+      "plopper i suppa",
+      "teleporterer inn i brødristeren",
+      "klikker i tannbørsten",
+      "zapper i lommelykta",
+      "glitrer i frokostskåla",
+      "humrer i fiskebollen",
+      "vagger på tastaturet",
+      "vrikker på null tyngdekraft",
+      "spretter i badebalja",
+      "tuter i tekoppen",
+      "suser gjennom gardinene",
+      "bobler i brusflaska"
+    ],
+    "fabeldyr": [
+      "synger i pannekakerøra",
+      "gløder i ryggsekken",
+      "glitrer i snøen",
+      "flakser i gardinen",
+      "tramper på trampolina",
+      "snørrler i hjelmen",
+      "kvekker i putetrekket",
+      "hikker i rustninga",
+      "brummer i syltetøyglasset",
+      "vifter med halen i vaffeljernet",
+      "gnistrer i vottene",
+      "plasker i vanndammen",
+      "stuper i potetsekken",
+      "vralter gjennom grøten",
+      "gjesper i tordenskyen",
+      "mjauer i kongestolen"
+    ],
+    "havuhyre": [
+      "plasker i vanndammen",
+      "bobler i badekaret",
+      "skvulper i støvsugeren",
+      "spruter i ansiktet på månen",
+      "surkler i sandkassa",
+      "suser under brygga",
+      "kiler under bordet",
+      "gliser i redningsvesten",
+      "dykker i vaskebøtta",
+      "svømmer i saftglasset",
+      "vralter i tang og tøys",
+      "tuter i skjell-telefonen",
+      "knipser med klørne i fjæra",
+      "snufser i sjøsprøyten",
+      "piper i snorkelen",
+      "fniser i fjorden"
+    ],
+    "mutantdyr": [
+      "mjauer i rustninga",
+      "bjeffer i blomsterpotta",
+      "breker i dusjen",
+      "grynter i snømannen",
+      "brummer i matpakka",
+      "skvatter i speilet",
+      "snubler i lissebåndet",
+      "spretter i pannekakerøra",
+      "vralter på isen",
+      "gjesper i sokken",
+      "gliser i katteluka",
+      "fniser i fuglekassa",
+      "tusler i tørkestativet",
+      "vinker med halen i vinduet",
+      "plasker i vannkoppen",
+      "danser på kjøkkenbenken"
+    ],
+    "godtevesen": [
+      "slurper i kakaoen",
+      "smatter på vaffelen",
+      "gliser i godteskåla",
+      "fniser i sjokoladepapiret",
+      "hikker i saftglasset",
+      "tuter i marshmallowen",
+      "spretter i sukkerskya",
+      "danser i kanelen",
+      "snurrer i softisen",
+      "plopper i geléen",
+      "kiler i popcornposen",
+      "nynner i bollen med smågodt",
+      "vinker fra pepperkakehuset",
+      "snubler i melis-snøen",
+      "bobler i brusen",
+      "gjesper i puddingkoppen"
+    ]
+  },
+  "properties_transitive": {
+    "folkevesen": [
+      "overrasker {obj}",
+      "kiler {obj}",
+      "bærer {obj}"
+    ],
+    "romvesen": [
+      "zapper {obj}",
+      "teleporterer {obj}",
+      "scanner {obj}"
+    ],
+    "fabeldyr": [
+      "klemmer {obj}",
+      "maler {obj}",
+      "bærer {obj}"
+    ],
+    "havuhyre": [
+      "kiler {obj}",
+      "drar {obj}",
+      "skyver {obj}"
+    ],
+    "mutantdyr": [
+      "overrasker {obj}",
+      "kiler {obj}",
+      "bærer {obj}"
+    ],
+    "godtevesen": [
+      "overrasker {obj}",
+      "kiler {obj}",
+      "bærer {obj}"
+    ]
+  },
+  "properties_prepositional": {
+    "folkevesen": [
+      "snakker med {who}",
+      "vinker til {who}"
+    ],
+    "romvesen": [
+      "snakker med {who}",
+      "suser forbi {obj}"
+    ],
+    "fabeldyr": [
+      "danser med {who}",
+      "vinker til {who}"
+    ],
+    "havuhyre": [
+      "plasker på {obj}",
+      "dykker etter {obj}"
+    ],
+    "mutantdyr": [
+      "vinker til {who}",
+      "snuser på {obj}"
+    ],
+    "godtevesen": [
+      "danser med {who}",
+      "vinker til {who}"
+    ]
+  },
+  "objects": {
+    "default": {
+      "obj": [
+        "en potet",
+        "en sokk",
+        "en hatt",
+        "en bok",
+        "en stein",
+        "en banan",
+        "en blyant",
+        "en kake",
+        "en vaffel",
+        "en tannbørste",
+        "en ryggsekk",
+        "en støvel"
+      ],
+      "who": [
+        "en venn",
+        "en nisse",
+        "en lærer",
+        "en robot",
+        "en måke",
+        "en marsboer"
+      ]
+    },
+    "romvesen": {
+      "obj": [
+        "en robot",
+        "en rakett",
+        "en laser",
+        "en stjerne",
+        "en romhjelm",
+        "et kontrollpanel"
+      ],
+      "who": [
+        "en robot",
+        "en marsboer",
+        "en kaptein",
+        "en alien"
+      ]
+    }
+  },
+  "operation_types": [
+    {
+      "id": "modus_ponens",
+      "name": "Modus Ponens",
+      "symbol": "A→B, A ⊢ B"
+    },
+    {
+      "id": "modus_tollens",
+      "name": "Modus Tollens",
+      "symbol": "A→B, ¬B ⊢ ¬A"
+    },
+    {
+      "id": "universal_instantiation",
+      "name": "Universal Instantiation",
+      "symbol": "∀x P(x), a ⊢ P(a)"
+    },
+    {
+      "id": "disjunctive_syllogism",
+      "name": "Disjunctive Syllogism",
+      "symbol": "A∨B, ¬A ⊢ B"
+    },
+    {
+      "id": "hypothetical_syllogism",
+      "name": "Hypothetical Syllogism",
+      "symbol": "A→B, B→C ⊢ A→C"
+    },
+    {
+      "id": "contraposition",
+      "name": "Contraposition",
+      "symbol": "A→B ≡ ¬B→¬A"
+    },
+    {
+      "id": "existential_instantiation",
+      "name": "Existential Instantiation",
+      "symbol": "∃x P(x) ⊢ P(c)"
+    },
+    {
+      "id": "negation_introduction",
+      "name": "Negation Introduction",
+      "symbol": "A→⊥ ⊢ ¬A"
+    },
+    {
+      "id": "insufficient_info",
+      "name": "Insufficient Info",
+      "symbol": "∃x P(x), a ⊢ ?"
+    },
+    {
+      "id": "conjunction",
+      "name": "Conjunction",
+      "symbol": "A, B ⊢ A ∧ B"
+    },
+    {
+      "id": "disjunction_incl",
+      "name": "Inclusive Disjunction",
+      "symbol": "A ∨ B"
+    },
+    {
+      "id": "disjunction_excl",
+      "name": "Exclusive Disjunction",
+      "symbol": "A ⊕ B"
+    },
+    {
+      "id": "double_negation",
+      "name": "Double Negation",
+      "symbol": "¬¬P ⇔ P"
+    },
+    {
+      "id": "quantifier_all",
+      "name": "Quantifier All",
+      "symbol": "∀x P(x)"
+    },
+    {
+      "id": "quantifier_none",
+      "name": "Quantifier None",
+      "symbol": "¬∃x P(x)"
+    },
+    {
+      "id": "exception",
+      "name": "Exception",
+      "symbol": "∀x(¬E(x) → P(x))"
+    },
+    {
+      "id": "exception_heuristic",
+      "name": "Exception (heuristic)",
+      "symbol": "Language: 'except' ⇒ usually ¬P(a)"
+    },
+    {
+      "id": "affirming_consequent_trap",
+      "name": "Affirming Consequent Trap",
+      "symbol": "A→B, B ⊬ A"
+    },
+    {
+      "id": "denying_antecedent_trap",
+      "name": "Denying Antecedent Trap",
+      "symbol": "A→B, ¬A ⊬ ¬B"
+    },
+    {
+      "id": "de_morgan",
+      "name": "De Morgans lover",
+      "symbol": "¬(A∧B) ⇔ (¬A∨¬B)"
+    },
+    {
+      "id": "temporal_always",
+      "name": "Alltid (∀t)",
+      "symbol": "∀t P(t)"
+    },
+    {
+      "id": "temporal_sometimes",
+      "name": "Noen ganger (∃t)",
+      "symbol": "∃t P(t)"
+    },
+    {
+      "id": "contradiction",
+      "name": "Selvmotsigelse",
+      "symbol": "A ∧ ¬A"
+    },
+    {
+      "id": "excluded_middle",
+      "name": "Utelukket tredje",
+      "symbol": "P ∨ ¬P"
+    },
+    {
+      "id": "incompatibility",
+      "name": "Uforenlighet (A→¬B)",
+      "symbol": "A→¬B"
+    },
+    {
+      "id": "class_membership",
+      "name": "Klassetilhørighet (a∈B)",
+      "symbol": "a ∈ B"
+    },
+    {
+      "id": "subclass",
+      "name": "Underklasse (A⊂B)",
+      "symbol": "A ⊂ B"
+    },
+    {
+      "id": "possibility_implication",
+      "name": "Mulighetsimplikasjon (A→◇B)",
+      "symbol": "A → ◇B"
+    }
+  ],
+  "ui": {
+    "background_color": "#D8DFE5",
+    "text_color": "#2C3E50",
+    "border_color": "#6C757D",
+    "accent_color": "#007FFF",
+    "hover_color": "#b3cfff",
+    "button_color": "#E9ECEF",
+    "correct_color": "#ccffcc",
+    "error_color": "#ffcccc",
+    "option_min_height": 100,
+    "option_spacing": 35,
+    "option_min_width_percent": 50
+  },
+  "stats": {
+    "title": {
+      "text": "STATISTIKK"
+    },
+    "columns": {
+      "spacing": 60
+    },
+    "left_table": {
+      "row_spacing": 12,
+      "column_spacing": 28,
+      "fonts": {
+        "label": {
+          "family": "Palatino Linotype",
+          "size": 26,
+          "weight": "bold"
+        },
+        "value": {
+          "family": "Palatino Linotype",
+          "size": 26,
+          "weight": "bold"
+        }
+      },
+      "colors": {
+        "label": "#1F2A37",
+        "value": "#1F2A37",
+        "muted": "#A0AEC0"
+      }
+    },
+    "chart": {
+      "line_color": "#007FFF",
+      "fill_color": "#b3cfff",
+      "axis_color": "#1F2A37",
+      "grid_color": "#E5E7EB",
+      "background": "#FFFFFF",
+      "marker_color": "#1F2A37",
+      "corner_radius": 16
+    }
+  },
+  "fonts": {
+    "main": "Palatino Linotype",
+    "intro_size": 42,
+    "question_size": 32,
+    "answer_size": 28,
+    "progress_size": 36,
+    "result_size": 32,
+    "settings_title_size": 42,
+    "settings_label_size": 34
+  },
+  "texts": {
+    "title": "LOGIKKQUIZ",
+    "intro_title": "LOGIKKQUIZ",
+    "intro_subtitle": "",
+    "intro": "Du får logiske {questions} oppgaver.\nLykke til!",
+    "start_button": "⭐️ START",
+    "progress_template": "Oppgave {current}/{total}",
+    "result_template": "Resultat: {score}/{total}",
+    "settings_title": "INNSTILLINGER",
+    "settings_questions": "ANTALL OPPGAVER",
+    "settings_difficulty": "VANSKELIGHETSGRAD",
+    "next_button": "NESTE",
+    "status_default": "LogikkQuiz"
+  },
+  "result_screen": {
+    "reward_color": "#E67E22",
+    "accuracy_bonus_utilons": 2,
+    "accuracy_reward_text": "Flawless"
+  }
+}
