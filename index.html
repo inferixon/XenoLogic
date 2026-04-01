@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="Assets/whitenoise.webp" type="image/webp" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -89,6 +90,14 @@
           <aside class="station-feed" id="station-feed" data-ready="false">
             <p class="station-feed__label">Station Feed // Fresh news</p>
             <figure class="station-feed__media">
+              <img
+                class="station-feed__noise"
+                src="Assets/whitenoise.webp"
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+                fetchpriority="high"
+              />
               <img alt="Signal snapshot from Axiom Station" data-feed-image />
             </figure>
             <div class="station-feed__content">

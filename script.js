@@ -9,8 +9,15 @@ const stationFeedsFallback = [
 
 const stationFeedRotationMs = 10 * 60 * 1000;
 const stationFeedFadeMs = 180;
+const stationFeedBootNoiseMs = 300;
 const stationFeedStorageKey = "xenologic:last-station-feed-id";
 const stationFeedSnapshotStorageKey = "xenologic:last-station-feed-snapshot";
+
+function wait(durationMs) {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, durationMs);
+  });
+}
 
 function isValidFeed(feed) {
   return Boolean(
@@ -131,24 +138,28 @@ function renderFeed(feed) {
     writeLastStationFeedId(feed.id);
   };
 
+  const imageReady = preloadFeedImage(feed);
+
   const showFeed = () => {
     if (!stationFeed || stationFeed.dataset.ready !== "true") {
-      commitFeed();
-      if (stationFeed) {
+      Promise.all([imageReady, wait(stationFeedBootNoiseMs)]).then(() => {
+        commitFeed();
         stationFeed.dataset.ready = "true";
-      }
+      });
       return;
     }
 
-    stationFeed.dataset.transitioning = "true";
+    imageReady.then(() => {
+      stationFeed.dataset.transitioning = "true";
 
-    window.setTimeout(() => {
-      commitFeed();
-      stationFeed.dataset.transitioning = "false";
-    }, stationFeedFadeMs);
+      window.setTimeout(() => {
+        commitFeed();
+        stationFeed.dataset.transitioning = "false";
+      }, stationFeedFadeMs);
+    });
   };
 
-  preloadFeedImage(feed).then(showFeed);
+  showFeed();
 }
 
 if (navToggle && siteNav) {
@@ -169,14 +180,7 @@ if (feedTitle && feedBody && feedImage) {
   const storedFeed = readStoredFeed();
 
   if (stationFeed) {
-    stationFeed.dataset.loading = storedFeed ? "false" : "true";
-  }
-
-  if (storedFeed) {
-    applyFeed(storedFeed);
-    if (stationFeed) {
-      stationFeed.dataset.ready = "true";
-    }
+    stationFeed.dataset.loading = "true";
   }
 
   loadStationFeeds().then((stationFeeds) => {
