@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XenoLogic - Xenopedia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body class="page" data-page="xenopedia">
+    <div class="site-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html" aria-label="XenoLogic homepage">
+          <img class="brand__logo" src="Assets/AX-logo.png" alt="Axiom Station logo" />
+          <div class="brand__copy">
+            <strong class="brand__title">XenoLogic</strong>
+            <span class="brand__tagline">Biology wiggles. Logic remains</span>
+          </div>
+        </a>
+
+        <div class="site-header__meta">
+          <p class="lang-switch" aria-label="Language switch visual only">
+            <span class="lang-switch__item lang-switch__item--active">EN</span>
+            <span class="lang-switch__divider" aria-hidden="true">|</span>
+            <span class="lang-switch__item">UA</span>
+            <span class="lang-switch__divider" aria-hidden="true">|</span>
+            <span class="lang-switch__item">NO</span>
+          </p>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-site-nav>
+      <div class="shell">
+        <ul class="site-nav__list">
+          <li><a href="xenopedia.html" aria-current="page">Xenopedia</a></li>
+          <li><a href="inference-protocols.html">Inference Protocols</a></li>
+          <li><a href="research-log.html">Research Log</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="page-main shell content-panel">
+      <p class="page-eyebrow">XENOPEDIA // FIELD CATALOG</p>
+      <p class="content-panel__intro">
+        This archive does not rank species by danger, beauty, or etiquette. It records what they
+        do, how they confuse observers, and why they are useful for logical training.
+      </p>
+
+      <section class="xenopedia-grid">
+        <article class="xeno-card">
+          <p class="xeno-card__eyebrow">ROMVESEN // ENTRY 01</p>
+          <h2>Glorp</h2>
+          <p>
+            Known for tapping inspection glass in suspiciously regular patterns. Often appears in
+            the station's training reports because it encourages clean implication chains.
+          </p>
+          <ul class="xeno-meta">
+            <li>Typical behavior - pulses, taps, cobalt static traces</li>
+            <li>Logic value - implication, quantifier traps</li>
+            <li>Threat level - low, unless given office access</li>
+          </ul>
+        </article>
+
+        <article class="xeno-card">
+          <p class="xeno-card__eyebrow">ROMVESEN // ENTRY 02</p>
+          <h2>Zaxer</h2>
+          <p>
+            A fast-moving archive pest with a talent for creating false causal stories. Excellent
+            for training analysts not to confuse sequence with proof.
+          </p>
+          <ul class="xeno-meta">
+            <li>Typical behavior - flickers near signal relays</li>
+            <li>Logic value - affirming the consequent traps</li>
+            <li>Threat level - moderate to paperwork</li>
+          </ul>
+        </article>
+
+        <article class="xeno-card">
+          <p class="xeno-card__eyebrow">ROMVESEN // ENTRY 03</p>
+          <h2>Plunk</h2>
+          <p>
+            A small lifeform with a dramatic instinct for pressing the wrong button at the perfect
+            moment. Frequently used in protocols about contradiction and insufficient information.
+          </p>
+          <ul class="xeno-meta">
+            <li>Typical behavior - misfires, echoes, panic chirps</li>
+            <li>Logic value - contradiction, missing evidence</li>
+            <li>Threat level - low, but noisy</li>
+          </ul>
+        </article>
+
+        <article class="xeno-card">
+          <p class="xeno-card__eyebrow">ROMVESEN // ENTRY 04</p>
+          <h2>Vrex</h2>
+          <p>
+            A territorial observer-class organism that reacts strongly to category errors. Useful
+            for class membership, subclassing, and mistaken generalization examples.
+          </p>
+          <ul class="xeno-meta">
+            <li>Typical behavior - perimeter loops, sharp vocal warnings</li>
+            <li>Logic value - classes, subclasses, scope</li>
+            <li>Threat level - situational</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <ul class="footer-list">
+          <li>Axiom Station</li>
+          <li>Division of Behavioral Inference</li>
+        </ul>
+        <ul class="footer-list">
+          <li>Sector: Kepler Relay 7</li>
+          <li>Orbit: Vanta-3 Research Ring</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

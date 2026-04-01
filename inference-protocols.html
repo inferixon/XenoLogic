@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XenoLogic - Inference Protocols</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body class="page" data-page="protocols">
+    <div class="site-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html" aria-label="XenoLogic homepage">
+          <img class="brand__logo" src="Assets/AX-logo.png" alt="Axiom Station logo" />
+          <div class="brand__copy">
+            <strong class="brand__title">XenoLogic</strong>
+            <span class="brand__tagline">Biology wiggles. Logic remains</span>
+          </div>
+        </a>
+
+        <div class="site-header__meta">
+          <p class="lang-switch" aria-label="Language switch visual only">
+            <span class="lang-switch__item lang-switch__item--active">EN</span>
+            <span class="lang-switch__divider" aria-hidden="true">|</span>
+            <span class="lang-switch__item">UA</span>
+            <span class="lang-switch__divider" aria-hidden="true">|</span>
+            <span class="lang-switch__item">NO</span>
+          </p>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-site-nav>
+      <div class="shell">
+        <ul class="site-nav__list">
+          <li><a href="xenopedia.html">Xenopedia</a></li>
+          <li><a href="inference-protocols.html" aria-current="page">Inference Protocols</a></li>
+          <li><a href="research-log.html">Research Log</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="page-main shell content-panel">
+      <p class="page-eyebrow">INFERENCE PROTOCOLS // CORE LOGIC</p>
+      <p class="content-panel__intro">
+        These protocols summarize the reasoning patterns behind XenoLogic. Strange lifeforms
+        change their behavior. Logic does not.
+      </p>
+
+      <section class="protocol-grid">
+        <article class="protocol-card">
+          <h2>Implication and deduction</h2>
+          <p>
+            If a report states "If A, then B," our first job is to respect the direction of the
+            claim. The protocol allows valid chains such as modus ponens and modus tollens, but it
+            rejects shortcuts that feel plausible without being proven.
+          </p>
+          <ul class="protocol-list">
+            <li>Modus ponens - if A leads to B, and A happened, B follows.</li>
+            <li>Modus tollens - if A leads to B, and B did not happen, A did not happen.</li>
+            <li>Hypothetical syllogism - if A leads to B and B leads to C, A can lead to C.</li>
+          </ul>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Quantifiers and scope</h2>
+          <p>
+            Reports often move between "all," "some," and "none." The scope matters. A statement
+            about one glorp cannot automatically become a law for every glorp in the archive.
+          </p>
+          <ul class="protocol-list">
+            <li>Universal claims - rules that apply to every member of a class.</li>
+            <li>Existential claims - evidence that proves at least one case exists.</li>
+            <li>Null claims - rules that eliminate the whole class from a condition.</li>
+          </ul>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Disjunction and contradiction</h2>
+          <p>
+            Some reports use inclusive or. Others use exclusive or. A contradiction appears when a
+            report claims both a statement and its negation at the same time.
+          </p>
+          <ul class="protocol-list">
+            <li>Inclusive or - A or B, and sometimes both.</li>
+            <li>Exclusive or - A or B, but not both.</li>
+            <li>Contradiction - the report cannot support A and not-A at once.</li>
+            <li>Insufficient information - no forced conclusion without proof.</li>
+          </ul>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Known fallacies</h2>
+          <p>
+            XenoLogic is designed to catch elegant mistakes. The most dangerous errors are the ones
+            that sound clever while still breaking the report.
+          </p>
+          <ul class="protocol-list">
+            <li>Affirming the consequent - B happened, therefore A caused it. Not valid.</li>
+            <li>Denying the antecedent - A did not happen, therefore B could not happen. Not valid.</li>
+            <li>Predicate substitution - changing the property while pretending the logic stayed the same.</li>
+            <li>Class substitution - replacing one species with a similar but different one.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <ul class="footer-list">
+          <li>Axiom Station</li>
+          <li>Division of Behavioral Inference</li>
+        </ul>
+        <ul class="footer-list">
+          <li>Sector: Kepler Relay 7</li>
+          <li>Orbit: Vanta-3 Research Ring</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XenoLogic - Homepage</title>
+    <title>XenoLogic - Terminal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
   </head>
-  <body class="page page-home" data-page="home">
+  <body class="page" data-page="terminal">
     <div class="site-background" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -22,7 +22,7 @@
           <img class="brand__logo" src="Assets/AX-logo.png" alt="Axiom Station logo" />
           <div class="brand__copy">
             <strong class="brand__title">XenoLogic</strong>
-            <span class="brand__tagline">Biology wiggles. Logic remains.</span>
+            <span class="brand__tagline">Biology wiggles. Logic remains</span>
           </div>
         </a>
 
@@ -60,63 +60,55 @@
       </div>
     </nav>
 
-    <main class="page-main">
-      <section class="hero-panel shell">
-        <p class="hero-panel__eyebrow">AXIOM STATION // ACTIVE SIGNAL WINDOW</p>
+    <main class="page-main shell terminal-panel">
+      <p class="page-eyebrow">AXIOM STATION // XENOLOGIC TERMINAL</p>
+      <p class="terminal-panel__intro">
+        This is a static terminal slice for the current course delivery. The full browser-based quiz
+        flow comes later. The interface direction starts here.
+      </p>
 
-        <div class="hero-panel__grid">
-          <div class="hero-copy">
-            <p class="hero-copy__lead">
-              Axiom Station has resumed classified observation across unstable alien sectors.
-            </p>
-            <p>
-              From orbital probes to deep-field drones, Axiom Station gathers classified records
-              of species that refuse to behave in reasonable ways.
-            </p>
-            <p>
-              Your role is not to admire them. Your role is to determine what follows logically
-              from the evidence.
-            </p>
-            <p>
-              Review the observation logs, isolate the valid conclusion, and file your report
-              before the specimen changes its mind.
-            </p>
+      <section class="terminal-screen">
+        <article class="terminal-status">
+          <h2>Observer Clearance Active</h2>
+          <p>Question 03 of 15</p>
+          <p>Research Case #48271-AX</p>
+        </article>
+
+        <article class="terminal-case">
+          <h2>Case report</h2>
+          <p>
+            Orbital probe K7 has submitted a fresh behavioral anomaly from Dock C of the Vanta-3
+            archive ring.
+          </p>
+          <p>
+            Every glorp that taps the inspection glass in groups of three is marked with cobalt
+            static.
+          </p>
+          <p>
+            No organism marked with cobalt static may cross the amber gate unless the blue
+            quarantine beacon is active.
+          </p>
+          <p>
+            The observed glorp tapped the inspection glass in groups of three and was later
+            recorded crossing the amber gate.
+          </p>
+          <p>What can be logically concluded from this report?</p>
+          <ul class="terminal-case__answers">
+            <li>Option A - The blue quarantine beacon was active when the glorp crossed the amber gate.</li>
+            <li>Option B - The glorp itself activated the blue quarantine beacon before crossing the amber gate.</li>
+            <li>Option C - Every organism that crosses the amber gate while the beacon is active taps in groups of three.</li>
+          </ul>
+        </article>
+
+        <div class="terminal-actions">
+          <p class="terminal-actions__label">Select valid conclusion</p>
+          <div class="terminal-actions__buttons">
+            <button class="terminal-option" type="button">OPTION A</button>
+            <button class="terminal-option" type="button">OPTION B</button>
+            <button class="terminal-option" type="button">OPTION C</button>
           </div>
-
-          <aside class="station-feed" id="station-feed">
-            <p class="station-feed__label">Station Feed // Fresh news</p>
-            <figure class="station-feed__media">
-              <img
-                src="Assets/news-00001.png"
-                alt="Signal snapshot from Axiom Station"
-                data-feed-image
-              />
-            </figure>
-            <div class="station-feed__content">
-              <h2 class="station-feed__title" data-feed-title>
-                Cosmo-flies continue attacks on survey drones
-              </h2>
-              <p class="station-feed__text" data-feed-body>
-                For reasons still unclear, the winged lifeforms of Sector XX keep targeting
-                exposed antenna arrays.
-              </p>
-            </div>
-          </aside>
+          <p class="terminal-panel__microcopy">Static preview only - full answer logic comes later.</p>
         </div>
-
-        <div class="hero-panel__actions">
-          <a class="cta-button" href="terminal.html">
-            <span>START</span>
-            <span>XenoLogic Terminal</span>
-          </a>
-          <p class="hero-panel__microcopy">Authorized analysts only!</p>
-        </div>
-
-        <p class="hero-panel__disclaimer">
-          <span aria-hidden="true">⚠</span>
-          Caution! Do not mimic observed organism behavior without proper clearance.
-          <span aria-hidden="true">⚠</span>
-        </p>
       </section>
     </main>
 
