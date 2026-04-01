@@ -1,25 +1,40 @@
-const stationFeeds = [
+const stationFeedsFallback = [
   {
+    id: 1,
     title: "Cosmo-flies continue attacks on survey drones",
     body: "For reasons still unclear, the winged lifeforms of Sector XX keep targeting exposed antenna arrays.",
-    image: "Assets/news-00001.png",
-  },
-  {
-    title: "Specimen 04 attempted to classify the observer first",
-    body: "No consensus has been reached on whether this counts as intelligence, sarcasm, or a territorial reflex.",
-    image: "Assets/news-00001.png",
-  },
-  {
-    title: "Three signals were recorded. One was just rude.",
-    body: "Field teams confirm that not every transmission from deep space can be described as constructive.",
-    image: "Assets/news-00001.png",
-  },
-  {
-    title: "Containment aisle B now requires calmer footsteps",
-    body: "A chain of glowing spores has started mirroring the emotional tone of nearby staff conversations.",
-    image: "Assets/news-00001.png",
+    image: "Assets/news-001.jpg",
   },
 ];
+
+async function loadStationFeeds() {
+  try {
+    const response = await fetch("news-feed.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Feed request failed with status ${response.status}`);
+    }
+
+    const stationFeeds = await response.json();
+    if (!Array.isArray(stationFeeds)) {
+      throw new Error("Feed data is not an array");
+    }
+
+    const publishedFeeds = stationFeeds.filter((item) => {
+      return (
+        typeof item?.title === "string" &&
+        item.title.trim() &&
+        typeof item?.body === "string" &&
+        item.body.trim() &&
+        typeof item?.image === "string" &&
+        item.image.trim()
+      );
+    });
+
+    return publishedFeeds.length ? publishedFeeds : stationFeedsFallback;
+  } catch {
+    return stationFeedsFallback;
+  }
+}
 
 const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
@@ -42,8 +57,10 @@ if (navToggle && siteNav) {
 }
 
 if (feedTitle && feedBody && feedImage) {
-  const randomFeed = stationFeeds[Math.floor(Math.random() * stationFeeds.length)];
-  feedTitle.textContent = randomFeed.title;
-  feedBody.textContent = randomFeed.body;
-  feedImage.src = randomFeed.image;
+  loadStationFeeds().then((stationFeeds) => {
+    const randomFeed = stationFeeds[Math.floor(Math.random() * stationFeeds.length)];
+    feedTitle.textContent = randomFeed.title;
+    feedBody.textContent = randomFeed.body;
+    feedImage.src = randomFeed.image;
+  });
 }

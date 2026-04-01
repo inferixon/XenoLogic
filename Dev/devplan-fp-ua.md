@@ -13,6 +13,7 @@ Full Product є наступним розширенням після MVP.
 - складніший UI
 - багатомовність
 - розширені presentation layers
+- AI generation for station news feed
 
 ### Потенційні species groups
 
