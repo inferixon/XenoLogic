@@ -10,6 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
   </head>
@@ -83,23 +86,14 @@
             </p>
           </div>
 
-          <aside class="station-feed" id="station-feed">
+          <aside class="station-feed" id="station-feed" data-ready="false">
             <p class="station-feed__label">Station Feed // Fresh news</p>
             <figure class="station-feed__media">
-              <img
-                src="Assets/news-001.jpg"
-                alt="Signal snapshot from Axiom Station"
-                data-feed-image
-              />
+              <img alt="Signal snapshot from Axiom Station" data-feed-image />
             </figure>
             <div class="station-feed__content">
-              <h2 class="station-feed__title" data-feed-title>
-                Cosmo-flies continue attacks on survey drones
-              </h2>
-              <p class="station-feed__text" data-feed-body>
-                For reasons still unclear, the winged lifeforms of Sector XX keep targeting
-                exposed antenna arrays.
-              </p>
+              <h2 class="station-feed__title" data-feed-title></h2>
+              <p class="station-feed__text" data-feed-body></p>
             </div>
           </aside>
         </div>

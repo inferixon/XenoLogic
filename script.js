@@ -8,6 +8,7 @@ const stationFeedsFallback = [
 ];
 
 const stationFeedRotationMs = 10 * 60 * 1000;
+const stationFeedFadeMs = 180;
 const stationFeedStorageKey = "xenologic:last-station-feed-id";
 
 async function loadStationFeeds() {
@@ -70,9 +71,41 @@ function writeLastStationFeedId(feedId) {
 
 const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
+const stationFeed = document.querySelector("#station-feed");
 const feedTitle = document.querySelector("[data-feed-title]");
 const feedBody = document.querySelector("[data-feed-body]");
 const feedImage = document.querySelector("[data-feed-image]");
+
+function renderFeed(feed) {
+  const nextImage = new Image();
+
+  const applyFeed = () => {
+    feedTitle.textContent = feed.title;
+    feedBody.textContent = feed.body;
+    feedImage.src = feed.image;
+  };
+
+  const showFeed = () => {
+    if (!stationFeed || stationFeed.dataset.ready !== "true") {
+      applyFeed();
+      if (stationFeed) {
+        stationFeed.dataset.ready = "true";
+      }
+      return;
+    }
+
+    stationFeed.dataset.transitioning = "true";
+
+    window.setTimeout(() => {
+      applyFeed();
+      stationFeed.dataset.transitioning = "false";
+    }, stationFeedFadeMs);
+  };
+
+  nextImage.addEventListener("load", showFeed, { once: true });
+  nextImage.addEventListener("error", showFeed, { once: true });
+  nextImage.src = feed.image;
+}
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -95,9 +128,7 @@ if (feedTitle && feedBody && feedImage) {
     const renderRandomFeed = () => {
       const randomFeed = pickRandomFeed(stationFeeds, currentFeedId);
       currentFeedId = randomFeed.id;
-      feedTitle.textContent = randomFeed.title;
-      feedBody.textContent = randomFeed.body;
-      feedImage.src = randomFeed.image;
+      renderFeed(randomFeed);
       writeLastStationFeedId(randomFeed.id);
     };
 
