@@ -844,9 +844,10 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .xeno-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: start;
-  gap: var(--space-6);
+  gap: 1rem;
 }
 
 .xeno-card__body {
@@ -854,6 +855,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
   grid-template-columns: minmax(0, 1fr) var(--size-xeno-visual-width);
   align-items: start;
   gap: var(--space-6);
+  width: 100%;
 }
 
 .xeno-card__copy {
@@ -870,9 +872,10 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 .xeno-card__header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  width: 100%;
   padding: 0.95rem 1rem;
   border: 1px solid var(--border-soft);
   border-radius: calc(var(--radius-card) - 0.35rem);

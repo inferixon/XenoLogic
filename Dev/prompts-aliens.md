@@ -173,3 +173,25 @@ Because the final display size is very small (`208 × 248 px`), prioritize:
 - limited background clutter
 - medium-close portrait framing
 - visible texture and lighting over tiny detail noise
+
+
+
+
+### 05 — Trax
+
+**Prompt:**  
+Photorealistic portrait of **Trax**, a rail-obsessed alien species from the industrial belts of Orpun. Not a horror predator, but a strange, officious, mildly ridiculous creature with overly straight body geometry, awkwardly aligned limbs, and an expression of intense concern about directional order. Its anatomy should suggest that it loves routes, edges, tracks, and unnecessary systems. It should feel absurdly strict rather than dangerous, like a biological transit inspector invented by a feverish planet. Slightly funny, weirdly believable, and a little unsettling in a bureaucratic way. Subtle industrial research setting, realistic skin or leathery texture, clean silhouette, centered specimen portrait, photorealistic, highly detailed, absurd alien specimen, not cartoon, not comic, not monstrous xenomorph horror.
+
+---
+
+### 08 — Vrex
+
+**Prompt:**  
+Photorealistic portrait of **Vrex**, a territorial taxonomy creature from the red dunes of Vrake. Not a sleek apex predator, but a bulky, stubborn, over-serious alien with thick body mass, a heavy judgmental face, and anatomy that suggests it takes labels personally. It should feel like a desert animal crossed with an angry filing system: physically imposing, but also faintly absurd. Funny through posture, facial expression, and excessive dignity, not through cartoon style. Avoid horror-monster clichés. Realistic hide, dusty texture, slightly ceremonial stance, subtle containment or desert-research backdrop, photorealistic alien specimen portrait, believable biology, weird but not terrifying, not comic, not xenomorph-like.
+
+---
+
+### 09 — Snurp
+
+**Prompt:**  
+Photorealistic portrait of **Snurp**, a syrup-dwelling alien species from Mellifex Delta. Avoid long trunk or obvious nose-tube anatomy. Instead, design it as a soft, damp, odd little organism with a puckered sipping mouth, rounded front-facing face, and strange collapsible feeding folds or petal-like mouthparts. It should look curious, sticky, and mildly pathetic, as if it investigates reality by tasting it and then regretting the decision. Slightly cute, biologically strange, and funny in a wet disappointing way. Glossy skin, subtle syrup residue, soft expressive eyes, minimal specimen background, photorealistic textures, believable organic form, not cartoon, not comic, not exaggerated trunk creature.
