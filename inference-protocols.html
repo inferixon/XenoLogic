@@ -64,65 +64,318 @@
       <header class="page-main__header">
         <p class="page-eyebrow page-main__eyebrow">INFERENCE PROTOCOLS // CORE LOGIC</p>
         <p class="content-panel__intro page-main__intro">
-          These protocols summarize the reasoning patterns behind XenoLogic. Strange lifeforms
-          change their behavior. Logic does not.
+          The archive groups every core operation into nine protocol classes.<br>
+          Each block below shows the operation, its formal shape, and the reasoning it trains.
         </p>
       </header>
 
       <section class="protocol-grid">
         <article class="protocol-card">
-          <h2>Implication and deduction</h2>
-          <p>
-            If a report states "If A, then B," our first job is to respect the direction of the
-            claim. The protocol allows valid chains such as modus ponens and modus tollens, but it
-            rejects shortcuts that feel plausible without being proven.
-          </p>
-          <ul class="protocol-list">
-            <li>Modus ponens - if A leads to B, and A happened, B follows.</li>
-            <li>Modus tollens - if A leads to B, and B did not happen, A did not happen.</li>
-            <li>Hypothetical syllogism - if A leads to B and B leads to C, A can lead to C.</li>
-          </ul>
+          <h2>Negation and Equivalences</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Statement negation</td>
+                  <td>¬P</td>
+                  <td>Marks that a claim is not true.</td>
+                </tr>
+                <tr>
+                  <td>Double negation</td>
+                  <td>¬¬P ⇔ P</td>
+                  <td>Two negations return the statement to its original truth.</td>
+                </tr>
+                <tr>
+                  <td>De Morgan's laws</td>
+                  <td>¬(A ∧ B) ⇔ (¬A ∨ ¬B)</td>
+                  <td>Negating a conjunction turns into at least one negated branch.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
 
         <article class="protocol-card">
-          <h2>Quantifiers and scope</h2>
-          <p>
-            Reports often move between "all," "some," and "none." The scope matters. A statement
-            about one glorp cannot automatically become a law for every glorp in the archive.
-          </p>
-          <ul class="protocol-list">
-            <li>Universal claims - rules that apply to every member of a class.</li>
-            <li>Existential claims - evidence that proves at least one case exists.</li>
-            <li>Null claims - rules that eliminate the whole class from a condition.</li>
-          </ul>
+          <h2>Implication and Deduction</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Implication</td>
+                  <td>A → B</td>
+                  <td>Reads as "if A, then B" and fixes the direction of the claim.</td>
+                </tr>
+                <tr>
+                  <td>Modus ponens</td>
+                  <td>A → B, A ⊢ B</td>
+                  <td>If the condition holds and the rule is true, the consequence follows.</td>
+                </tr>
+                <tr>
+                  <td>Modus tollens</td>
+                  <td>A → B, ¬B ⊢ ¬A</td>
+                  <td>If the consequence fails, the original condition cannot have held.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
 
         <article class="protocol-card">
-          <h2>Disjunction and contradiction</h2>
-          <p>
-            Some reports use inclusive or. Others use exclusive or. A contradiction appears when a
-            report claims both a statement and its negation at the same time.
-          </p>
-          <ul class="protocol-list">
-            <li>Inclusive or - A or B, and sometimes both.</li>
-            <li>Exclusive or - A or B, but not both.</li>
-            <li>Contradiction - the report cannot support A and not-A at once.</li>
-            <li>Insufficient information - no forced conclusion without proof.</li>
-          </ul>
+          <h2>Quantifiers</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Universal quantifier</td>
+                  <td>∀x P(x)</td>
+                  <td>Applies one rule to every member of a class.</td>
+                </tr>
+                <tr>
+                  <td>Existential quantifier</td>
+                  <td>∃x P(x)</td>
+                  <td>Confirms that at least one valid instance exists.</td>
+                </tr>
+                <tr>
+                  <td>Negated existential</td>
+                  <td>¬∃x P(x)</td>
+                  <td>States that no instance exists that satisfies the predicate.</td>
+                </tr>
+                <tr>
+                  <td>Non-empty class plus universal rule</td>
+                  <td>∃x A(x) ∧ ∀x(A(x)→B(x)) ⊢ ∃x(A(x)∧B(x))</td>
+                  <td>Combines existence with a universal rule to prove a concrete overlap.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
 
         <article class="protocol-card">
-          <h2>Known fallacies</h2>
-          <p>
-            XenoLogic is designed to catch elegant mistakes. The most dangerous errors are the ones
-            that sound clever while still breaking the report.
-          </p>
-          <ul class="protocol-list">
-            <li>Affirming the consequent - B happened, therefore A caused it. Not valid.</li>
-            <li>Denying the antecedent - A did not happen, therefore B could not happen. Not valid.</li>
-            <li>Predicate substitution - changing the property while pretending the logic stayed the same.</li>
-            <li>Class substitution - replacing one species with a similar but different one.</li>
-          </ul>
+          <h2>Temporal Quantifiers</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Universal temporal quantifier</td>
+                  <td>∀t P(t)</td>
+                  <td>Claims that the predicate holds at every relevant time.</td>
+                </tr>
+                <tr>
+                  <td>Existential temporal quantifier</td>
+                  <td>∃t P(t)</td>
+                  <td>Claims that the predicate holds at least once in time.</td>
+                </tr>
+                <tr>
+                  <td>Ban on simultaneity</td>
+                  <td>¬(A ∧ B)</td>
+                  <td>Used with exclusive choices to forbid both states at once.</td>
+                </tr>
+                <tr>
+                  <td>Temporal implication</td>
+                  <td>A → ◇B</td>
+                  <td>A trigger makes a later or possible outcome logically available.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Logical Connectives</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Conjunction</td>
+                  <td>A ∧ B</td>
+                  <td>Both linked statements must hold together.</td>
+                </tr>
+                <tr>
+                  <td>Inclusive disjunction</td>
+                  <td>A ∨ B</td>
+                  <td>At least one branch is true, and both may still be true.</td>
+                </tr>
+                <tr>
+                  <td>Exclusive disjunction</td>
+                  <td>A ⊕ B</td>
+                  <td>Exactly one branch may hold, never both together.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Relations and Property Transfer</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Transitivity</td>
+                  <td>(A→B) ∧ (B→C) ⊢ (A→C)</td>
+                  <td>Chains two valid implications into a longer valid consequence.</td>
+                </tr>
+                <tr>
+                  <td>Shared property</td>
+                  <td>∃x(A(x) ∧ X(x)) ∧ ∃y(B(y) ∧ X(y))</td>
+                  <td>Shows that both classes instantiate the same property without proving they are equivalent.</td>
+                </tr>
+                <tr>
+                  <td>Incompatibility</td>
+                  <td>A → ¬B</td>
+                  <td>Declares that once A holds, B is ruled out.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Classes and Subclasses</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Class membership</td>
+                  <td>A ∈ B</td>
+                  <td>Places one object inside a named class.</td>
+                </tr>
+                <tr>
+                  <td>Subclass relation</td>
+                  <td>A ⊂ B</td>
+                  <td>Shows that one class is contained inside a broader class.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Metalogic</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Insufficient information</td>
+                  <td>?</td>
+                  <td>No forced conclusion is available from the evidence given.</td>
+                </tr>
+                <tr>
+                  <td>Contradiction</td>
+                  <td>A ∧ ¬A</td>
+                  <td>A report breaks when it asserts a statement and its negation together.</td>
+                </tr>
+                <tr>
+                  <td>False implication</td>
+                  <td>A→B ≠ B→A</td>
+                  <td>The consequence of a rule cannot be reversed without proof.</td>
+                </tr>
+                <tr>
+                  <td>Excluded middle</td>
+                  <td>P ∨ ¬P</td>
+                  <td>A statement is either true or false inside the forced domain.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="protocol-card">
+          <h2>Fallacy Detection</h2>
+          <div class="protocol-table-wrap">
+            <table class="protocol-table">
+              <thead>
+                <tr>
+                  <th scope="col">Operation</th>
+                  <th scope="col">Formula</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Affirming the consequent</td>
+                  <td>A→B, B ⊬ A</td>
+                  <td>Seeing B does not prove that A caused it.</td>
+                </tr>
+                <tr>
+                  <td>Denying the antecedent</td>
+                  <td>A→B, ¬A ⊬ ¬B</td>
+                  <td>Removing the trigger does not automatically remove the outcome.</td>
+                </tr>
+                <tr>
+                  <td>Contraposition</td>
+                  <td>A→B ≡ ¬B→¬A</td>
+                  <td>The valid reverse form of implication negates both sides.</td>
+                </tr>
+                <tr>
+                  <td>Disjunctive syllogism</td>
+                  <td>A∨B, ¬A ⊢ B</td>
+                  <td>If one branch of an either-or is false, the other branch remains.</td>
+                </tr>
+                <tr>
+                  <td>Exception handling</td>
+                  <td>∀x(¬E(x) → P(x))</td>
+                  <td>A rule may hold generally while still reserving a specific exception set.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
       </section>
     </main>

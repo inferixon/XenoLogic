@@ -721,6 +721,29 @@ body.nav-open .menu-toggle span:nth-child(3) {
   gap: var(--space-6);
 }
 
+.protocol-grid {
+  grid-template-columns: 1fr;
+}
+
+.page[data-page="protocols"] .page-main__header {
+  justify-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.page[data-page="protocols"] .page-main__eyebrow {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.page[data-page="protocols"] .page-main__intro {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: center;
+}
+
 .protocol-card,
 .xeno-card,
 .log-entry,
@@ -739,6 +762,55 @@ body.nav-open .menu-toggle span:nth-child(3) {
 .terminal-status h2 {
   margin-bottom: var(--space-4);
   font-size: var(--size-card-title);
+}
+
+.protocol-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-soft);
+  border-radius: calc(var(--radius-card) - 0.35rem);
+}
+
+.protocol-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 40rem;
+  background-color: rgba(8, 12, 28, 0.22);
+}
+
+.protocol-table th,
+.protocol-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--border-soft);
+  text-align: left;
+  vertical-align: top;
+}
+
+.protocol-table th {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background-color: rgba(15, 25, 52, 0.82);
+}
+
+.protocol-table td {
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.protocol-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.protocol-table td:nth-child(1) {
+  width: 24%;
+  color: var(--text-primary);
+}
+
+.protocol-table td:nth-child(2) {
+  width: 22%;
+  color: var(--accent-secondary);
+  white-space: nowrap;
 }
 
 .protocol-list,
@@ -1066,6 +1138,10 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .terminal-case,
   .terminal-status {
     padding: var(--space-card-padding);
+  }
+
+  .protocol-table {
+    min-width: 34rem;
   }
 
   .terminal-actions__buttons {
