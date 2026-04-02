@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "entry": 1,
+    "name": "Glorp",
+    "description": "A damp diplomatic blob from the administrative moons of Sector Veloo, where important decisions are made by tapping on glass until someone looks worried. Glorps communicate through moist rhythm, ceremonial blinking, and the firm belief that every corridor is a meeting.",
+    "threats": "Low in open space. Severe near office doors, visitor badges, coffee machines, and any object that can be tapped with bureaucratic authority.",
+    "image": "Assets/alien-01.webp"
+  },
+  {
+    "id": 2,
+    "entry": 2,
+    "name": "Blimp",
+    "description": "A floating helium theologian from the upper pantry rings of Brakk-9. Blimps drift with majestic uselessness, hum at ceiling corners, and act as if gravity is a rumor started by accountants.",
+    "threats": "Usually harmless, but may block cameras, vents, skylights, and the emotional recovery of short staff members trying to reach a ladder.",
+    "image": "Assets/alien-02.webp"
+  },
+  {
+    "id": 3,
+    "entry": 3,
+    "name": "Zaxer",
+    "description": "A nervous archive ferret from the signal warrens of Khepsil Minor, evolved to appear exactly where causality becomes embarrassing. Zaxers move like gossip with knees and can turn two unrelated events into a confident theory before lunch.",
+    "threats": "Moderate to paperwork, timelines, and weak minds addicted to pattern-matching. One Zaxer can create three false reports and a completely fictional emergency.",
+    "image": "Assets/alien-03.webp"
+  },
+  {
+    "id": 4,
+    "entry": 4,
+    "name": "Flim",
+    "description": "A translucent shimmer-being from a planet made mostly of reflective panic. Flims are famous for appearing sincere, decorative, and deeply uncommitted to having edges.",
+    "threats": "Low physical danger. High risk of mirror incidents, sensor confusion, and staff quietly arguing whether the Flim was ever there in the first place.",
+    "image": "Assets/alien-04.webp"
+  },
+  {
+    "id": 5,
+    "entry": 5,
+    "name": "Trax",
+    "description": "A rail-minded predator from the industrial belts of Orpun, where everything moves on tracks, including religion. Trax specimens adore straight lines, route maps, and the emotional collapse of anyone who says 'we’ll improvise'.",
+    "threats": "Dangerous near logistics boards, conveyor belts, and people who misuse arrows in presentations. Will reorganize traffic out of spite.",
+    "image": "Assets/alien-05.webp"
+  },
+  {
+    "id": 6,
+    "entry": 6,
+    "name": "Mork",
+    "description": "A compact dusk organism from the cave suburbs of Norr-Vanta, bred by evolution to look like a guilty thought in a coat. Morks are slow, observant, and radiate the energy of a manager who has seen the receipts.",
+    "threats": "Low motion threat. High psychological threat. Prolonged exposure may cause confession, overexplaining, or sudden honesty about who broke the control panel.",
+    "image": "Assets/alien-06.webp"
+  },
+  {
+    "id": 7,
+    "entry": 7,
+    "name": "Plunk",
+    "description": "A small emergency enthusiast from the toy-colored debris fields of Plorrax, where every button is sacred and every wrong button is even better. Plunks have tiny limbs, huge conviction, and zero patience for safety protocol.",
+    "threats": "Low bite risk, catastrophic button risk. A single Plunk can trigger alarms, shutters, lights, and one deeply symbolic sprinkler event.",
+    "image": "Assets/alien-07.webp"
+  },
+  {
+    "id": 8,
+    "entry": 8,
+    "name": "Vrex",
+    "description": "A territorial taxonomy beast from the red dunes of Vrake, where naming something incorrectly is legally considered an insult. Vrexes patrol boundaries, hate category errors, and carry themselves like angry museum law.",
+    "threats": "Situational, especially near labels, charts, storage bins, or interns saying 'basically the same thing'. Will correct classification with volume and teeth.",
+    "image": "Assets/alien-08.webp"
+  },
+  {
+    "id": 9,
+    "entry": 9,
+    "name": "Snurp",
+    "description": "A tubular sipping organism from the syrup oceans of Mellifex Delta. Snurps investigate reality by slurping it, then staring as if disappointed by the result.",
+    "threats": "Sticky rather than violent. Dangerous near samples, noodles, exposed wires, and any fluid that should remain inside a scientist or a machine.",
+    "image": "Assets/alien-09.webp"
+  },
+  {
+    "id": 10,
+    "entry": 10,
+    "name": "Klorpi",
+    "description": "A many-fingered trinket thief from the clutter moons of Klorpax, where social rank is measured by how many useless objects one can steal gracefully. Klorpis are agile, charming, and spiritually aligned with petty nonsense.",
+    "threats": "Severe to pens, badges, screws, keycards, earrings, and the final shred of order on any desk. Never ask a Klorpi where your stylus went.",
+    "image": "Assets/alien-10.webp"
+  },
+  {
+    "id": 11,
+    "entry": 11,
+    "name": "Zonkle",
+    "description": "A sleep-drunk resonance creature from the fog basins of Ønkar, best known for blinking once every geological era and still somehow missing meetings on purpose. Zonkles emit soft tones that sound like a pillow making excuses.",
+    "threats": "Minimal unless operating heavy machinery, navigation systems, or a room full of tired adults. May induce yawning cascades and democratic collapse.",
+    "image": "Assets/alien-11.webp"
+  },
+  {
+    "id": 12,
+    "entry": 12,
+    "name": "Bomp",
+    "description": "A ceremonial collision animal from the padded asteroid schools of Bøm-Theta. Bomps travel in optimistic arcs and seem genuinely surprised each time physics continues to exist.",
+    "threats": "High to ankles, knees, instrument stands, and dignity. Repeated Bomp contact may produce bruises and spiritual exhaustion.",
+    "image": "Assets/alien-12.webp"
+  },
+  {
+    "id": 13,
+    "entry": 13,
+    "name": "Pibrax",
+    "description": "A high-frequency chatter parasite from the antenna forests of Praxil, where silence is treated as a medical emergency. Pibraxes squeal, click, narrate, and occasionally sound like a machine trying to remember a secret.",
+    "threats": "Extreme annoyance hazard. Can ruin stealth, recordings, concentration, and one’s belief that mute buttons mean anything in this universe.",
+    "image": "Assets/alien-13.webp"
+  },
+  {
+    "id": 14,
+    "entry": 14,
+    "name": "Glimbo",
+    "description": "A decorative ambush organism from the chandelier reefs of Halo-Glass, evolved to sparkle exactly enough to be trusted by fools. Glimbos drift like festival confetti that learned predatory patience.",
+    "threats": "Low direct aggression. High risk of distraction, misidentification, and staff walking face-first into important equipment while saying 'oh pretty'.",
+    "image": "Assets/alien-14.webp"
+  },
+  {
+    "id": 15,
+    "entry": 15,
+    "name": "Tubblek",
+    "description": "A trumpet-snouted corridor goblin from the parade craters of Tukk Minor, where migration, warning, flirting, and tax policy are all communicated by honking. Tubbleks are compact, proud, and offensively enthusiastic at dawn.",
+    "threats": "Moderate acoustic threat. Especially dangerous in vents, sleeping quarters, diplomatic briefings, and any place where silence is doing real work.",
+    "image": "Assets/alien-15.webp"
+  },
+  {
+    "id": 16,
+    "entry": 16,
+    "name": "Dribbli",
+    "description": "A soft-legged moisture courier from the leaking embassy swamps of Drib-Nor, where status is measured by how confidently one arrives wet and uninvited. Dribblis wobble with diplomatic urgency, leave suspicious little trails, and behave as if every floor belongs to an ancient liquid treaty.",
+    "threats": "Low predator risk. Severe slip hazard near polished surfaces, cables, paperwork, and anyone trying to look professional while falling sideways.",
+    "image": "Assets/alien-16.webp"
+  }
+]

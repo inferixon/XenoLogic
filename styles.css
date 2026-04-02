@@ -21,7 +21,7 @@
   --surface-metal-dark: #5f6672;
   --text-primary: #e8eef7;
   --text-secondary: #b6c4e2;
-  --text-muted: #9aa6bf;
+  --text-muted: #878e9e;
   --accent: #6fe7ff;
   --accent-soft: #8488a4;
   --border: #26324a;
@@ -92,6 +92,9 @@
   --space-card-padding: 1.5rem;
   --size-card-title: 1.15rem;
   --size-card-eyebrow: 0.85rem;
+  --size-xeno-visual-width: 11.5rem;
+  --size-xeno-visual-height: 14rem;
+  --size-xeno-visual-caption: 0.72rem;
   --space-list-indent: 1.25rem;
   --space-list-gap: 0.35rem;
   --size-terminal-panel-min-height: 59rem;
@@ -198,7 +201,7 @@ ul {
   z-index: -2;
   background:
     linear-gradient(var(--bg-overlay-top), var(--bg-overlay-bottom)),
-    url("Assets/starsky.jpg") center top / cover no-repeat;
+    url("Assets/starsky.webp") center top / cover no-repeat;
 }
 
 /* Header - branding */
@@ -399,12 +402,15 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 .page-main__header {
   display: grid;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
   justify-items: center;
+  width: 100%;
   text-align: center;
 }
 
 .page-main__eyebrow {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   font-size: var(--size-page-eyebrow);
   font-weight: 700;
   text-align: center;
@@ -414,7 +420,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 .page-main__intro {
   max-width: var(--size-content-intro-max-width);
-  margin: 0 auto var(--space-10);
+  margin: 0 auto;
   font-size: var(--size-content-intro);
   line-height: 1.5;
   text-align: center;
@@ -714,6 +720,16 @@ body.nav-open .menu-toggle span:nth-child(3) {
   color: var(--text-secondary);
 }
 
+.page-main__header .page-main__eyebrow {
+  margin-bottom: 0;
+}
+
+.page-main__header .page-main__intro {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
 .protocol-grid,
 .xenopedia-grid,
 .log-grid {
@@ -727,20 +743,6 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 .page[data-page="protocols"] .page-main__header {
   justify-items: center;
-  gap: var(--space-6);
-  margin-bottom: var(--space-6);
-  text-align: center;
-}
-
-.page[data-page="protocols"] .page-main__eyebrow {
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.page[data-page="protocols"] .page-main__intro {
-  width: 100%;
-  max-width: none;
-  margin: 0;
   text-align: center;
 }
 
@@ -753,6 +755,16 @@ body.nav-open .menu-toggle span:nth-child(3) {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-card);
   background-color: var(--surface-card-soft);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.16);
+}
+
+.protocol-card h2,
+.xeno-card h2,
+.log-entry h2 {
+  margin-left: 5%;
+  max-width: 95%;
+  padding-left: 0;
+  text-align: left;
 }
 
 .protocol-card h2,
@@ -814,7 +826,6 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .protocol-list,
-.xeno-meta,
 .log-meta,
 .footer-list,
 .terminal-case__answers {
@@ -822,7 +833,6 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .protocol-list li + li,
-.xeno-meta li + li,
 .log-meta li + li,
 .footer-list li + li,
 .terminal-case__answers li + li {
@@ -831,6 +841,162 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 .xenopedia-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.xeno-card {
+  display: grid;
+  align-items: start;
+  gap: var(--space-6);
+}
+
+.xeno-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--size-xeno-visual-width);
+  align-items: start;
+  gap: var(--space-6);
+}
+
+.xeno-card__copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.xeno-card__header,
+.xeno-card__field {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xeno-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: calc(var(--radius-card) - 0.35rem);
+  background-color: rgba(15, 25, 52, 0.82);
+}
+
+.xeno-card__field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.xeno-card__name {
+  margin: 0;
+  font-size: calc(var(--size-card-title) * 1.5);
+  color: var(--accent);
+}
+
+.xeno-card__label {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-left: 5%;
+  max-width: 95%;
+  text-align: left;
+  color: var(--text-muted);
+}
+
+.xeno-card__eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: var(--size-card-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.xeno-card__text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.xeno-card__visual {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  justify-items: center;
+}
+
+.xeno-card__visual-frame {
+  width: 100%;
+  min-height: var(--size-xeno-visual-height);
+  border: 1px solid var(--border-soft);
+  border-radius: calc(var(--radius-card) - 0.35rem);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(9, 14, 34, 0.45), rgba(9, 14, 34, 0.82)),
+    radial-gradient(circle at 50% 20%, rgba(111, 231, 255, 0.18), transparent 52%),
+    rgba(8, 12, 28, 0.82);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.xeno-card__visual-image {
+  display: block;
+  width: 100%;
+  min-height: var(--size-xeno-visual-height);
+  height: var(--size-xeno-visual-height);
+  object-fit: cover;
+}
+
+.xeno-card__visual-frame.is-missing .xeno-card__visual-image {
+  display: none;
+}
+
+.xeno-card__visual-art {
+  width: 100%;
+  min-height: var(--size-xeno-visual-height);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.xeno-card__visual-art--glorp {
+  background-image:
+    radial-gradient(circle at 50% 38%, rgba(111, 231, 255, 0.95) 0 10%, transparent 11%),
+    radial-gradient(circle at 35% 58%, rgba(86, 194, 255, 0.7) 0 9%, transparent 10%),
+    radial-gradient(circle at 66% 63%, rgba(86, 194, 255, 0.72) 0 8%, transparent 9%),
+    radial-gradient(ellipse at 50% 64%, rgba(95, 137, 255, 0.34) 0 28%, transparent 29%),
+    linear-gradient(180deg, rgba(13, 23, 48, 0.18), rgba(7, 12, 28, 0.3));
+}
+
+.xeno-card__visual-art--zaxer {
+  background-image:
+    linear-gradient(135deg, transparent 0 18%, rgba(111, 231, 255, 0.88) 18% 22%, transparent 22% 34%, rgba(111, 231, 255, 0.56) 34% 37%, transparent 37%),
+    linear-gradient(160deg, transparent 0 36%, rgba(160, 172, 255, 0.72) 36% 40%, transparent 40% 52%, rgba(111, 231, 255, 0.46) 52% 55%, transparent 55%),
+    radial-gradient(circle at 68% 30%, rgba(111, 231, 255, 0.4), transparent 24%),
+    linear-gradient(180deg, rgba(12, 18, 40, 0.16), rgba(7, 12, 28, 0.3));
+}
+
+.xeno-card__visual-art--plunk {
+  background-image:
+    radial-gradient(circle at 52% 35%, rgba(255, 220, 110, 0.9) 0 8%, transparent 9%),
+    radial-gradient(circle at 46% 54%, rgba(255, 138, 110, 0.85) 0 13%, transparent 14%),
+    radial-gradient(circle at 65% 62%, rgba(255, 220, 110, 0.76) 0 7%, transparent 8%),
+    radial-gradient(circle at 34% 68%, rgba(255, 138, 110, 0.7) 0 6%, transparent 7%),
+    linear-gradient(180deg, rgba(28, 18, 20, 0.18), rgba(7, 12, 28, 0.3));
+}
+
+.xeno-card__visual-art--vrex {
+  background-image:
+    radial-gradient(circle at 50% 26%, rgba(168, 255, 180, 0.62) 0 8%, transparent 9%),
+    linear-gradient(180deg, transparent 0 26%, rgba(168, 255, 180, 0.84) 26% 30%, transparent 30% 42%, rgba(168, 255, 180, 0.76) 42% 46%, transparent 46%),
+    linear-gradient(120deg, transparent 0 42%, rgba(111, 231, 255, 0.46) 42% 46%, transparent 46%),
+    linear-gradient(240deg, transparent 0 44%, rgba(111, 231, 255, 0.38) 44% 48%, transparent 48%),
+    linear-gradient(180deg, rgba(12, 20, 34, 0.16), rgba(7, 12, 28, 0.3));
+}
+
+.xeno-card__visual-caption {
+  font-size: var(--size-xeno-visual-caption);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .xeno-card__eyebrow,
@@ -965,6 +1131,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
     --size-content-intro-max-width: 48rem;
     --size-content-intro: 1.12rem;
     --size-card-title: 1.24rem;
+    --size-xeno-visual-width: 13rem;
+    --size-xeno-visual-height: 15.5rem;
     --size-footer-text: 1.02rem;
     --space-footer-padding-inline: 2rem;
   }
@@ -976,6 +1144,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
     --space-hero-panel-padding: 1.625rem 2rem 2rem;
     --size-hero-grid: 1fr;
     --space-header-inline: 1rem;
+    --size-xeno-visual-height: 12rem;
   }
 
   .site-header__inner {
@@ -991,6 +1160,10 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .xenopedia-grid,
   .log-grid {
     grid-template-columns: 1fr;
+  }
+
+  .xeno-card {
+    grid-template-columns: minmax(0, 1fr) var(--size-xeno-visual-width);
   }
 }
 
@@ -1017,6 +1190,9 @@ body.nav-open .menu-toggle span:nth-child(3) {
     --size-disclaimer: 0.78rem;
     --size-content-intro: 0.92rem;
     --space-card-padding: 1rem;
+    --size-xeno-visual-width: 100%;
+    --size-xeno-visual-height: 12rem;
+    --size-xeno-visual-caption: 0.66rem;
     --size-terminal-buttons-gap: 0.75rem;
     --size-terminal-option-min-width: 6.5rem;
     --size-terminal-option-min-height: 3rem;
@@ -1130,6 +1306,18 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .terminal-screen,
   .site-footer__inner {
     gap: 1rem;
+  }
+
+  .xeno-card__body {
+    grid-template-columns: 1fr;
+  }
+
+  .protocol-card h2,
+  .xeno-card h2,
+  .log-entry h2 {
+    margin-left: 5%;
+    max-width: 95%;
+    padding-left: 0;
   }
 
   .protocol-card,
