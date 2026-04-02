@@ -3,4 +3,6 @@ node_modules/
 Thumbs.db
 Desktop.ini
 .vercel
-.env*.local
+.env
+*.local
+tmp/
