@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XenoLogic - Terminal Session</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body class="page page-terminal-session" data-page="terminal-session">
+    <div class="site-background" aria-hidden="true"></div>
+
+    <main class="terminal-session-stage">
+      <section class="terminal-session-shell shell" aria-label="XenoLogic quiz session">
+        <img
+          class="terminal-session-shell__logo"
+          src="Assets/XL-termial-logo.webp"
+          alt="XenoLogic Terminal label"
+        />
+
+        <section class="terminal-monitor" aria-label="Terminal session monitor">
+          <div class="terminal-monitor__frame">
+            <div class="terminal-monitor__bezel">
+              <div class="terminal-monitor__screen terminal-monitor__screen--session">
+                <header class="terminal-monitor__header">
+                  <p class="terminal-monitor__eyebrow">AXIOM STATION // QUIZ SESSION</p>
+                </header>
+
+                <div class="terminal-monitor__body terminal-session-placeholder">
+                  <h1 class="terminal-session-placeholder__title">UNDER DEVELOPMENT</h1>
+                  <p class="terminal-session-placeholder__copy">
+                    The live question flow will render here next.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="terminal-session-actions" aria-label="Answer options placeholder">
+          <button class="terminal-session-option" type="button">Option 1</button>
+          <button class="terminal-session-option" type="button">Option 2</button>
+          <button class="terminal-session-option" type="button">Option 3</button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

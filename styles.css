@@ -1054,7 +1054,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
   min-height: var(--size-terminal-option-min-height);
 }
 
-.page-terminal-entrance {
+.page-terminal-entrance,
+.page-terminal-session {
   overflow: hidden;
 }
 
@@ -1062,7 +1063,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
   padding-bottom: 0;
 }
 
-.terminal-entrance-stage {
+.terminal-entrance-stage,
+.terminal-session-stage {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1070,7 +1072,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
   padding: 0;
 }
 
-.terminal-entrance-shell {
+.terminal-entrance-shell,
+.terminal-session-shell {
   display: grid;
   grid-template-rows: auto auto auto 1fr;
   align-content: start;
@@ -1082,7 +1085,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
   box-shadow: var(--shadow-soft);
 }
 
-.terminal-entrance-shell__logo {
+.terminal-entrance-shell__logo,
+.terminal-session-shell__logo {
   width: 40%;
   filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.38));
 }
@@ -1222,7 +1226,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
   line-height: 1.7;
 }
 
-.terminal-entrance-actions {
+.terminal-entrance-actions,
+.terminal-session-actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1232,8 +1237,11 @@ body.nav-open .menu-toggle span:nth-child(3) {
   padding-bottom: 0.75rem;
 }
 
-.terminal-clearance {
+.terminal-clearance,
+.terminal-session-option {
   position: relative;
+  display: grid;
+  place-items: center;
   isolation: isolate;
   min-width: 13rem;
   min-height: 3.5rem;
@@ -1252,17 +1260,22 @@ body.nav-open .menu-toggle span:nth-child(3) {
   text-shadow: 0 0 0 transparent;
   cursor: pointer;
   overflow: hidden;
+  text-decoration: none;
+  font: inherit;
 }
 
 .terminal-clearance::before,
-.terminal-clearance::after {
+.terminal-clearance::after,
+.terminal-session-option::before,
+.terminal-session-option::after {
   content: "";
   position: absolute;
   pointer-events: none;
   border-radius: inherit;
 }
 
-.terminal-clearance::before {
+.terminal-clearance::before,
+.terminal-session-option::before {
   inset: 0.22rem;
   border-radius: 0.72rem;
   background:
@@ -1273,7 +1286,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
   z-index: -2;
 }
 
-.terminal-clearance::after {
+.terminal-clearance::after,
+.terminal-session-option::after {
   inset: 0.48rem;
   border-radius: 0.56rem;
   background:
@@ -1284,8 +1298,40 @@ body.nav-open .menu-toggle span:nth-child(3) {
   z-index: -1;
 }
 
+.terminal-session-placeholder {
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 1.1rem;
+}
+
+.terminal-session-placeholder__title {
+  margin: 0;
+  color: #9efdf3;
+  font-size: clamp(2.3rem, 5vw, 4.75rem);
+  line-height: 0.92;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 12px rgba(97, 255, 237, 0.22),
+    0 0 28px rgba(97, 255, 237, 0.08);
+}
+
+.terminal-session-placeholder__copy {
+  max-width: 34rem;
+  margin: 0;
+  color: #9efdf3;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.7;
+  text-shadow:
+    0 0 10px rgba(97, 255, 237, 0.18),
+    0 0 20px rgba(97, 255, 237, 0.06);
+}
+
 .terminal-clearance:hover,
-.terminal-clearance:focus-visible {
+.terminal-clearance:focus-visible,
+.terminal-session-option:hover,
+.terminal-session-option:focus-visible {
   text-shadow:
     0 0 7px currentColor,
     0 0 14px color-mix(in srgb, currentColor 55%, transparent);
@@ -1548,16 +1594,19 @@ body.nav-open .menu-toggle span:nth-child(3) {
     gap: 1rem;
   }
 
-  .terminal-entrance-stage {
+  .terminal-entrance-stage,
+  .terminal-session-stage {
     padding: 0;
   }
 
-  .terminal-entrance-shell {
+  .terminal-entrance-shell,
+  .terminal-session-shell {
     gap: 5px;
     padding: 30px 0.85rem 0;
   }
 
-  .terminal-entrance-shell__logo {
+  .terminal-entrance-shell__logo,
+  .terminal-session-shell__logo {
     width: 40%;
   }
 
@@ -1594,16 +1643,32 @@ body.nav-open .menu-toggle span:nth-child(3) {
     line-height: 1.6;
   }
 
-  .terminal-entrance-actions {
+  .terminal-entrance-actions,
+  .terminal-session-actions {
     gap: 0.55rem;
     margin-top: 12px;
     width: 90%;
   }
 
-  .terminal-clearance {
+  .terminal-clearance,
+  .terminal-session-option {
     min-width: 100%;
     min-height: 2.8rem;
     font-size: 0.76rem;
+  }
+
+  .terminal-session-placeholder {
+    gap: 0.9rem;
+  }
+
+  .terminal-session-placeholder__title {
+    font-size: clamp(1.75rem, 11vw, 3rem);
+    letter-spacing: 0.14em;
+  }
+
+  .terminal-session-placeholder__copy {
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
 
   .xeno-card__body {
