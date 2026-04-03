@@ -928,24 +928,25 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .xeno-card__visual-frame {
+  display: block;
   width: 100%;
-  min-height: var(--size-xeno-visual-height);
+  min-height: 0;
+  aspect-ratio: 2 / 3;
+  padding: 0;
   border: 1px solid var(--border-soft);
   border-radius: calc(var(--radius-card) - 0.35rem);
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(9, 14, 34, 0.45), rgba(9, 14, 34, 0.82)),
-    radial-gradient(circle at 50% 20%, rgba(111, 231, 255, 0.18), transparent 52%),
-    rgba(8, 12, 28, 0.82);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background: transparent;
+  box-shadow: none;
 }
 
 .xeno-card__visual-image {
   display: block;
   width: 100%;
-  min-height: var(--size-xeno-visual-height);
-  height: var(--size-xeno-visual-height);
-  object-fit: cover;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
 }
 
 .xeno-card__visual-frame.is-missing .xeno-card__visual-image {
@@ -1430,7 +1431,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
     --space-hero-panel-padding: 1.625rem 2rem 2rem;
     --size-hero-grid: 1fr;
     --space-header-inline: 1rem;
-    --size-xeno-visual-height: 12rem;
+    --size-xeno-visual-height: 18rem;
   }
 
   .site-header__inner {
@@ -1457,8 +1458,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 @media (max-width: 767px) {
   :root {
-    --shell-width: 26.75rem;
-    --shell-gutter: var(--shell-gutter-mobile);
+    --shell-width: 100%;
+    --shell-gutter: 0rem;
     --size-header-min-height: 6.125rem;
     --size-brand-gap: 0.75rem;
     --size-brand-logo: 3.625rem;
@@ -1489,21 +1490,33 @@ body.nav-open .menu-toggle span:nth-child(3) {
   }
 
   .shell {
-    width: min(calc(100% - var(--shell-gutter)), var(--shell-width));
+    width: 100%;
+  }
+
+  .site-background {
+    display: none;
+  }
+
+  .site-header,
+  .site-nav,
+  .page-main,
+  .site-footer {
+    width: 100%;
   }
 
   .site-header__inner {
     align-items: center;
-    padding-block: 0.5rem;
+    padding: 0.5rem 0.75rem 0.25rem;
   }
 
   .brand__copy {
-    justify-items: start;
-    gap: 0.15rem;
+    justify-items: center;
+    gap: 0.35rem;
+    text-align: center;
   }
 
   .brand__tagline {
-    text-align: left;
+    text-align: center;
   }
 
   .lang-switch {
@@ -1518,11 +1531,20 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
   .site-nav {
     display: none;
-    padding: var(--space-nav-padding);
+    padding: 0;
   }
 
   body.nav-open .site-nav {
     display: block;
+  }
+
+  .site-nav .shell {
+    border-top: 0;
+  }
+
+  .site-nav__list {
+    margin: 0;
+    padding: 0.75rem 0.75rem 1rem;
   }
 
   .site-nav__list {
@@ -1594,6 +1616,32 @@ body.nav-open .menu-toggle span:nth-child(3) {
     gap: 1rem;
   }
 
+  .hero-panel,
+  .content-panel,
+  .terminal-panel,
+  .site-header__inner,
+  .site-nav .shell,
+  .site-footer__inner,
+  .terminal-entrance-shell,
+  .terminal-session-shell {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-panel,
+  .content-panel,
+  .terminal-panel,
+  .site-footer__inner {
+    box-shadow: none;
+  }
+
+  .hero-panel,
+  .content-panel,
+  .terminal-panel {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
   .terminal-entrance-stage,
   .terminal-session-stage {
     padding: 0;
@@ -1602,22 +1650,28 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .terminal-entrance-shell,
   .terminal-session-shell {
     gap: 5px;
-    padding: 30px 0.85rem 0;
+    padding: 30px 0 0;
   }
 
   .terminal-entrance-shell__logo,
   .terminal-session-shell__logo {
-    width: 40%;
+    width: 54%;
+  }
+
+  .terminal-monitor,
+  .terminal-screen {
+    width: 100%;
+    max-width: none;
   }
 
   .terminal-monitor__frame {
-    border-radius: 1.3rem;
-    padding: 0.75rem;
+    border-radius: 1.05rem;
+    padding: 0.38rem;
   }
 
   .terminal-monitor__bezel {
-    border-radius: 1rem;
-    padding: 0.65rem;
+    border-radius: 0.78rem;
+    padding: 0.32rem;
   }
 
   .terminal-monitor__screen {
@@ -1647,32 +1701,102 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .terminal-session-actions {
     gap: 0.55rem;
     margin-top: 12px;
-    width: 90%;
+    width: 100%;
+  }
+
+  .terminal-entrance-actions {
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+
+  .terminal-session-actions {
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0.4rem;
   }
 
   .terminal-clearance,
   .terminal-session-option {
-    min-width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
     min-height: 2.8rem;
-    font-size: 0.76rem;
+    padding: 0.75rem 0.45rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .terminal-clearance::before,
+  .terminal-session-option::before {
+    inset: 0.11rem;
+    border-radius: 0.6rem;
+  }
+
+  .terminal-clearance::after,
+  .terminal-session-option::after {
+    inset: 0.24rem;
+    border-radius: 0.44rem;
   }
 
   .terminal-session-placeholder {
-    gap: 0.9rem;
+    gap: 0.7rem;
   }
 
   .terminal-session-placeholder__title {
-    font-size: clamp(1.75rem, 11vw, 3rem);
-    letter-spacing: 0.14em;
+    max-width: 100%;
+    font-size: clamp(1.15rem, 8vw, 2rem);
+    line-height: 0.96;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
   }
 
   .terminal-session-placeholder__copy {
-    font-size: 0.92rem;
-    line-height: 1.6;
+    max-width: 92%;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .terminal-session-option {
+    padding: 0.68rem 0.25rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.03em;
   }
 
   .xeno-card__body {
     grid-template-columns: 1fr;
+  }
+
+  .xeno-card__header {
+    display: grid;
+    justify-items: start;
+    gap: 0.45rem;
+    padding: 0.8rem 0.85rem;
+  }
+
+  .xeno-card__name,
+  .xeno-card__eyebrow {
+    max-width: 100%;
+  }
+
+  .xeno-card__name {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+    line-height: 1;
+  }
+
+  .xeno-card__eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .xeno-card__visual-frame {
+    width: min(100%, 18rem);
+  }
+
+  .xeno-card__visual-image {
+    width: 100%;
+    height: 100%;
   }
 
   .protocol-card h2,
@@ -1692,7 +1816,81 @@ body.nav-open .menu-toggle span:nth-child(3) {
   }
 
   .protocol-table {
-    min-width: 34rem;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .protocol-table-wrap {
+    overflow-x: visible;
+  }
+
+  .protocol-table thead {
+    display: none;
+  }
+
+  .protocol-table,
+  .protocol-table tbody,
+  .protocol-table tr,
+  .protocol-table td {
+    display: block;
+  }
+
+  .protocol-table tr {
+    padding: 0.8rem 0.85rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .protocol-table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .protocol-table td {
+    display: grid;
+    grid-template-columns: minmax(5.6rem, 6.4rem) minmax(0, 1fr);
+    gap: 0.55rem;
+    width: 100%;
+    padding: 0;
+    border-bottom: 0;
+    font-size: 0.84rem;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .protocol-table td + td {
+    margin-top: 0.7rem;
+  }
+
+  .protocol-table td:nth-child(1),
+  .protocol-table td:nth-child(2) {
+    width: auto;
+  }
+
+  .protocol-table td:nth-child(2) {
+    white-space: normal;
+  }
+
+  .protocol-table td:nth-child(1)::before {
+    content: "Operation";
+  }
+
+  .protocol-table td:nth-child(2)::before {
+    content: "Formula";
+  }
+
+  .protocol-table td:nth-child(3)::before {
+    content: "Explanation";
+  }
+
+  .protocol-table td::before {
+    color: var(--accent);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .protocol-table td > * {
+    min-width: 0;
   }
 
   .terminal-actions__buttons {
@@ -1700,6 +1898,6 @@ body.nav-open .menu-toggle span:nth-child(3) {
   }
 
   .site-footer__inner {
-    padding-block: var(--space-footer-padding-block);
+    padding: var(--space-footer-padding-block) 1rem;
   }
 }

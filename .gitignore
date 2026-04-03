@@ -1,8 +1,10 @@
 node_modules/
 .vercel/
-Thumbs.db
+tmp/
 Desktop.ini
+Tools/
+Thumbs.db
 .vercel
 .env
 *.local
-tmp/
+.gitignore

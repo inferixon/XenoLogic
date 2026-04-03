@@ -16,7 +16,6 @@ const xenopediaGrid = document.querySelector("[data-xenopedia-grid]");
 
 const xenopediaFallback = [
   {
-    id: 1,
     entry: 1,
     name: "Glorp",
     description:
@@ -26,7 +25,6 @@ const xenopediaFallback = [
     image: "Assets/alien-01.webp",
   },
   {
-    id: 2,
     entry: 2,
     name: "Zaxer",
     description:
@@ -36,7 +34,6 @@ const xenopediaFallback = [
     image: "Assets/alien-02.webp",
   },
   {
-    id: 3,
     entry: 3,
     name: "Plunk",
     description:
@@ -46,7 +43,6 @@ const xenopediaFallback = [
     image: "Assets/alien-03.webp",
   },
   {
-    id: 4,
     entry: 4,
     name: "Vrex",
     description:
@@ -249,7 +245,6 @@ if (feedTitle && feedBody && feedImage) {
 function isValidXenoEntry(entry) {
   return Boolean(
     entry &&
-      typeof entry.id === "number" &&
       typeof entry.entry === "number" &&
       typeof entry.name === "string" &&
       entry.name.trim() &&
@@ -286,7 +281,7 @@ function formatEntryNumber(entryNumber) {
 }
 
 function sortXenopediaEntries(entries) {
-  return [...entries].sort((left, right) => left.name.localeCompare(right.name, "en", { sensitivity: "base" }));
+  return [...entries].sort((left, right) => left.entry - right.entry);
 }
 
 function createXenoCard(entry) {
