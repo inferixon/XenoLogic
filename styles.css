@@ -1233,40 +1233,62 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .terminal-clearance {
+  position: relative;
+  isolation: isolate;
   min-width: 13rem;
   min-height: 3.5rem;
-  padding: 0.8rem 1.1rem;
-  border: 1px solid rgba(139, 249, 239, 0.22);
+  padding: 0.92rem 1.25rem;
+  border: 1px solid rgba(8, 11, 15, 0.96);
   border-radius: 0.9rem;
-  color: #a8fff7;
-  background: linear-gradient(180deg, rgba(8, 26, 30, 0.9), rgba(5, 18, 23, 0.96));
+  color: #9efdf3;
+  background:
+    linear-gradient(180deg, rgba(37, 44, 53, 0.96), rgba(18, 22, 29, 0.98));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 2px 3px rgba(0, 0, 0, 0.2);
+    0 0 0 1px rgba(0, 0, 0, 0.95),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.52);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-shadow: 0 0 0 transparent;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.terminal-clearance--observer {
-  color: #8df0a0;
-  border-color: rgba(141, 240, 160, 0.26);
+.terminal-clearance::before,
+.terminal-clearance::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
 }
 
-.terminal-clearance--analyst {
-  color: #f6da7a;
-  border-color: rgba(246, 218, 122, 0.26);
+.terminal-clearance::before {
+  inset: 0.22rem;
+  border-radius: 0.72rem;
+  background:
+    linear-gradient(180deg, rgba(73, 84, 97, 0.92), rgba(28, 34, 43, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.46);
+  z-index: -2;
 }
 
-.terminal-clearance--containment {
-  color: #ff8f8f;
-  border-color: rgba(255, 143, 143, 0.28);
+.terminal-clearance::after {
+  inset: 0.48rem;
+  border-radius: 0.56rem;
+  background:
+    linear-gradient(180deg, rgba(5, 22, 26, 0.98), rgba(3, 16, 20, 1));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.72);
+  z-index: -1;
 }
 
 .terminal-clearance:hover,
 .terminal-clearance:focus-visible {
-  border-color: rgba(174, 255, 245, 0.42);
-  transform: translateY(-1px);
+  text-shadow:
+    0 0 7px currentColor,
+    0 0 14px color-mix(in srgb, currentColor 55%, transparent);
 }
 
 .research-placeholder {
