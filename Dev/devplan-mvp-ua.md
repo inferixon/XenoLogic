@@ -449,11 +449,54 @@ flex column 2:
 
 Ця сторінка вже не "майже звичайний сайт", а повністю diegetic terminal interface.
 
+### Продуктове рішення для terminal flow
+
+Для MVP terminal flow фіксується не як набір візуально різних сторінок, а як один цілісний UI-клас із єдиною мовою оформлення.
+
+Принцип:
+- `XenoLogic Terminal` має один впізнаваний shell
+- всередині цього shell існують різні режими
+- перший режим є `entrance mode`
+- другий режим є `session mode`
+
+Робоча структура:
+- `terminal-entrance.html` – вхід у terminal
+- `quiz session page` – сесійний екран того ж самого terminal language
+
+Це означає:
+- homepage лишається окремою звичайнішою product page
+- terminal pages уже не поводяться як звичайні content pages
+- візуально користувач має відчувати, що він не перейшов на "ще одну сторінку сайту", а увійшов у той самий station terminal
+
 ### Загальна структура
 
 - label / badge / png title: `XenoLogic Terminal`
 - великий екран терміналу
 - під екраном – кнопки взаємодії
+
+### Два режими terminal UI
+
+#### `Entrance mode`
+
+Це intro-режим terminal shell.
+
+Його задача:
+- привітати користувача вже всередині diegetic terminal
+- пояснити, що для старту треба вибрати `clearance level`
+- дати три основні кнопки вибору складності
+
+На цьому етапі terminal ще не показує actual case flow.
+
+#### `Session mode`
+
+Це режим активної quiz session.
+
+Його задача:
+- показувати поточний case
+- показувати прогрес сесії
+- дати прямий і чистий interaction loop: прочитав → подумав → вибрав відповідь → перейшов далі
+
+Обидва режими мають лишатися частинами одного й того самого terminal design system.
 
 ### Перший екран терміналу
 
@@ -505,6 +548,41 @@ flex row зліва направо:
 - homepage більш стандартна і сюжетна
 - terminal pages повністю беруть на себе diegetic sci-fi UI
 - саме terminal flow найближчий до Python-референса за структурою взаємодії
+
+### Логіка навігації в MVP
+
+Для MVP terminal flow фіксується як окремий режим продукту з відрізаною глобальною навігацією під час активної сесії.
+
+#### Що лишається до старту сесії
+
+- на `Homepage` є повний site shell: `header`, `nav`, `footer`
+- на `terminal-entrance.html` також може лишатися верхній site shell, поки користувач ще не почав session flow
+
+#### Що змінюється після старту quiz session
+
+- після вибору `clearance level` користувач входить у `session mode`
+- у `session mode` звичайний site `header`, `nav` і `footer` прибираються
+- на екрані лишається тільки terminal UI
+- замість глобальної навігації може існувати лише вузький службовий terminal header
+
+Це рішення приймається для того, щоб:
+- не ламати immersion
+- не розсипати користувача по інших сторінках посеред quiz flow
+- не ускладнювати MVP логікою resume / restore уже на етапі першого HTML/CSS delivery
+
+#### Наслідок для поведінки MVP
+
+- якщо користувач ще не стартував session, він може вільно ходити між content pages
+- якщо користувач уже стартував session, terminal стає окремим зосередженим interaction screen
+- вихід із цього режиму в MVP мислиться як завершення або скидання поточної сесії, а не як складний background-resume flow
+
+#### Робочий маршрут MVP
+
+- `Homepage`
+- `terminal-entrance.html`
+- `clearance selection`
+- `quiz session`
+- `XenoReport`
 
 ---
 

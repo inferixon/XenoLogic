@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XenoLogic - Terminal Entrance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body class="page page-terminal-entrance" data-page="terminal-entrance">
+    <div class="site-background" aria-hidden="true"></div>
+
+    <main class="terminal-entrance-stage">
+      <section class="terminal-entrance-shell shell" aria-label="XenoLogic terminal entrance">
+        <img
+          class="terminal-entrance-shell__logo"
+          src="Assets/XL-termial-logo.webp"
+          alt="XenoLogic Terminal label"
+        />
+
+        <section class="terminal-monitor" aria-label="Terminal monitor">
+          <div class="terminal-monitor__frame">
+            <div class="terminal-monitor__bezel">
+              <div class="terminal-monitor__screen">
+                <header class="terminal-monitor__header">
+                  <p class="terminal-monitor__eyebrow">AXIOM STATION // XENOLOGIC TERMINAL</p>
+                </header>
+
+                <div class="terminal-monitor__body">
+                  <p class="terminal-monitor__intro">
+                    Select a clearance level to unlock the next terminal layer and begin the observation flow.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="terminal-entrance-actions" aria-label="Clearance selection">
+          <button class="terminal-clearance terminal-clearance--observer" type="button">
+            Observer
+          </button>
+          <button class="terminal-clearance terminal-clearance--analyst" type="button">
+            Analyst
+          </button>
+          <button class="terminal-clearance terminal-clearance--containment" type="button">
+            Containment
+          </button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

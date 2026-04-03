@@ -1054,6 +1054,221 @@ body.nav-open .menu-toggle span:nth-child(3) {
   min-height: var(--size-terminal-option-min-height);
 }
 
+.page-terminal-entrance {
+  overflow: hidden;
+}
+
+.page-terminal-entrance .page-main {
+  padding-bottom: 0;
+}
+
+.terminal-entrance-stage {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.terminal-entrance-shell {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  align-content: start;
+  justify-items: center;
+  gap: 5px;
+  min-height: 100vh;
+  padding: 30px clamp(1rem, 2.4vw, 2rem) 0;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.terminal-entrance-shell__logo {
+  width: 40%;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.38));
+}
+
+.terminal-monitor {
+  width: 90%;
+}
+
+.terminal-monitor__frame {
+  position: relative;
+  aspect-ratio: 3 / 1.9;
+  padding: clamp(1rem, 1.6vw, 1.35rem);
+  border-radius: 2rem;
+  background:
+    linear-gradient(140deg, rgba(136, 142, 152, 0.34), rgba(46, 50, 58, 0.48) 42%, rgba(21, 24, 29, 0.52) 78%, rgba(102, 108, 116, 0.28)),
+    url("Assets/pattern-metal.webp") center / 240px 240px repeat,
+    linear-gradient(180deg, rgba(70, 75, 83, 0.96), rgba(35, 39, 45, 0.98));
+  border: 1px solid rgba(216, 225, 240, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(5, 7, 10, 0.45),
+    var(--shadow-soft);
+}
+
+.terminal-monitor__frame::before,
+.terminal-monitor__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.terminal-monitor__frame::before {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.16), transparent 18%),
+    radial-gradient(circle at 84% 78%, rgba(255, 255, 255, 0.08), transparent 16%),
+    repeating-linear-gradient(108deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 22px);
+  mix-blend-mode: screen;
+  opacity: 0.45;
+}
+
+.terminal-monitor__frame::after {
+  inset: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-monitor__bezel {
+  position: relative;
+  height: 100%;
+  padding: clamp(0.8rem, 1.4vw, 1rem);
+  border-radius: 1.45rem;
+  background:
+    linear-gradient(160deg, rgba(21, 24, 31, 0.96), rgba(45, 51, 61, 0.92) 46%, rgba(12, 14, 18, 0.98)),
+    radial-gradient(circle at 50% 12%, rgba(140, 151, 168, 0.08), transparent 50%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.42);
+}
+
+.terminal-monitor__screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(1.5rem, 3.8vw, 3rem);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(124, 255, 252, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(1, 18, 24, 0.96), rgba(2, 12, 18, 0.98));
+  border: 1px solid rgba(132, 215, 223, 0.18);
+  box-shadow:
+    inset 0 0 32px rgba(0, 0, 0, 0.56),
+    inset 0 0 65px rgba(0, 255, 229, 0.08),
+    0 3px 3px rgba(0, 0, 0, 0.16);
+}
+
+.terminal-monitor__screen::before,
+.terminal-monitor__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.terminal-monitor__screen::before {
+  background:
+    repeating-linear-gradient(180deg, rgba(185, 255, 245, 0.06) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.12), transparent 12%, transparent 88%, rgba(0, 0, 0, 0.14));
+  opacity: 0.48;
+}
+
+.terminal-monitor__screen::after {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(0, 0, 0, 0.22) 100%),
+    linear-gradient(180deg, rgba(190, 255, 250, 0.05), rgba(0, 0, 0, 0.12));
+}
+
+.terminal-monitor__header,
+.terminal-monitor__body {
+  position: relative;
+  z-index: 1;
+}
+
+.terminal-monitor__header {
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(120, 255, 245, 0.18);
+}
+
+.terminal-monitor__eyebrow,
+.terminal-monitor__intro {
+  color: #9efdf3;
+  text-shadow:
+    0 0 10px rgba(97, 255, 237, 0.24),
+    0 0 20px rgba(97, 255, 237, 0.08);
+}
+
+.terminal-monitor__eyebrow {
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  line-height: 1.35;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.terminal-monitor__body {
+  display: grid;
+  align-content: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.terminal-monitor__intro {
+  max-width: 38rem;
+  font-size: clamp(1.08rem, 1.45vw, 1.4rem);
+  line-height: 1.7;
+}
+
+.terminal-entrance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  width: 90%;
+  margin-top: 14px;
+  padding-bottom: 0.75rem;
+}
+
+.terminal-clearance {
+  min-width: 13rem;
+  min-height: 3.5rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid rgba(139, 249, 239, 0.22);
+  border-radius: 0.9rem;
+  color: #a8fff7;
+  background: linear-gradient(180deg, rgba(8, 26, 30, 0.9), rgba(5, 18, 23, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.terminal-clearance--observer {
+  color: #8df0a0;
+  border-color: rgba(141, 240, 160, 0.26);
+}
+
+.terminal-clearance--analyst {
+  color: #f6da7a;
+  border-color: rgba(246, 218, 122, 0.26);
+}
+
+.terminal-clearance--containment {
+  color: #ff8f8f;
+  border-color: rgba(255, 143, 143, 0.28);
+}
+
+.terminal-clearance:hover,
+.terminal-clearance:focus-visible {
+  border-color: rgba(174, 255, 245, 0.42);
+  transform: translateY(-1px);
+}
+
 .research-placeholder {
   padding-block: var(--space-6);
 }
@@ -1309,6 +1524,64 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .terminal-screen,
   .site-footer__inner {
     gap: 1rem;
+  }
+
+  .terminal-entrance-stage {
+    padding: 0;
+  }
+
+  .terminal-entrance-shell {
+    gap: 5px;
+    padding: 30px 0.85rem 0;
+  }
+
+  .terminal-entrance-shell__logo {
+    width: 40%;
+  }
+
+  .terminal-monitor__frame {
+    border-radius: 1.3rem;
+    padding: 0.75rem;
+  }
+
+  .terminal-monitor__bezel {
+    border-radius: 1rem;
+    padding: 0.65rem;
+  }
+
+  .terminal-monitor__screen {
+    min-height: 0;
+    padding: 1.2rem 1rem;
+  }
+
+  .terminal-monitor__header {
+    padding-bottom: 0.85rem;
+  }
+
+  .terminal-monitor__eyebrow {
+    font-size: 0.86rem;
+    letter-spacing: 0.12em;
+  }
+
+  .terminal-monitor__body {
+    min-height: 0;
+  }
+
+  .terminal-monitor__intro {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .terminal-entrance-actions {
+    gap: 0.55rem;
+    margin-top: 12px;
+    width: 90%;
+  }
+
+  .terminal-clearance {
+    min-width: 100%;
+    min-height: 2.8rem;
+    font-size: 0.76rem;
   }
 
   .xeno-card__body {
