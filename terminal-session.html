@@ -17,31 +17,35 @@
     <div class="site-background" aria-hidden="true"></div>
 
     <main class="terminal-session-stage">
-      <section class="terminal-session-shell shell" aria-label="XenoLogic quiz session">
-        <img
-          class="terminal-session-shell__logo"
-          src="Assets/XL-termial-logo.webp"
-          alt="XenoLogic Terminal label"
-        />
+        <section class="terminal-session-shell shell" aria-labelledby="terminal-session-title">
+          <header class="terminal-entrance-header">
+            <h1 id="terminal-session-title" class="terminal-entrance-title">
+              <img
+                class="terminal-session-shell__logo"
+                src="Assets/XL-termial-logo.webp"
+                alt="XenoLogic Terminal"
+              />
+            </h1>
+          </header>
 
-        <section class="terminal-monitor" aria-label="Terminal session monitor">
+          <div class="terminal-monitor" aria-label="Terminal session monitor">
           <div class="terminal-monitor__frame">
             <div class="terminal-monitor__bezel">
               <div class="terminal-monitor__screen terminal-monitor__screen--session">
                 <header class="terminal-monitor__header">
-                  <p class="terminal-monitor__eyebrow">AXIOM STATION // QUIZ SESSION</p>
+                    <h2 class="terminal-monitor__eyebrow">AXIOM STATION // QUIZ SESSION</h2>
                 </header>
 
                 <div class="terminal-monitor__body terminal-session-placeholder">
-                  <h1 class="terminal-session-placeholder__title">UNDER DEVELOPMENT</h1>
+                    <p class="terminal-session-placeholder__title">UNDER DEVELOPMENT</p>
                   <p class="terminal-session-placeholder__copy">
                     The live question flow will render here next.
                   </p>
                 </div>
               </div>
             </div>
+            </div>
           </div>
-        </section>
 
         <section class="terminal-session-actions" aria-label="Answer options placeholder">
           <button class="terminal-session-option" type="button">Option 1</button>

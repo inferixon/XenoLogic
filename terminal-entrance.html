@@ -17,19 +17,23 @@
     <div class="site-background" aria-hidden="true"></div>
 
     <main class="terminal-entrance-stage">
-      <section class="terminal-entrance-shell shell" aria-label="XenoLogic terminal entrance">
-        <img
-          class="terminal-entrance-shell__logo"
-          src="Assets/XL-termial-logo.webp"
-          alt="XenoLogic Terminal label"
-        />
+        <section class="terminal-entrance-shell shell" aria-labelledby="terminal-entrance-title">
+          <header class="terminal-entrance-header">
+            <h1 id="terminal-entrance-title" class="terminal-entrance-title">
+              <img
+                class="terminal-entrance-shell__logo"
+                src="Assets/XL-termial-logo.webp"
+                alt="XenoLogic Terminal"
+              />
+            </h1>
+          </header>
 
-        <section class="terminal-monitor" aria-label="Terminal monitor">
+          <div class="terminal-monitor" aria-label="Terminal monitor">
           <div class="terminal-monitor__frame">
             <div class="terminal-monitor__bezel">
               <div class="terminal-monitor__screen">
                 <header class="terminal-monitor__header">
-                  <p class="terminal-monitor__eyebrow">AXIOM STATION // XENOLOGIC TERMINAL</p>
+                    <h2 class="terminal-monitor__eyebrow">AXIOM STATION // XENOLOGIC TERMINAL</h2>
                 </header>
 
                 <div class="terminal-monitor__body">
@@ -39,20 +43,28 @@
                 </div>
               </div>
             </div>
+            </div>
           </div>
-        </section>
 
-        <section class="terminal-entrance-actions" aria-label="Clearance selection">
-          <a class="terminal-clearance terminal-clearance--observer" href="terminal-session.html">
-            Observer
-          </a>
-          <a class="terminal-clearance terminal-clearance--analyst" href="terminal-session.html">
-            Analyst
-          </a>
-          <a class="terminal-clearance terminal-clearance--containment" href="terminal-session.html">
-            Containment
-          </a>
-        </section>
+          <nav class="terminal-entrance-actions" aria-label="Clearance selection">
+            <ul class="terminal-entrance-actions__list">
+              <li>
+                <a class="terminal-clearance terminal-clearance--observer" href="terminal-session.html">
+                  Observer
+                </a>
+              </li>
+              <li>
+                <a class="terminal-clearance terminal-clearance--analyst" href="terminal-session.html">
+                  Analyst
+                </a>
+              </li>
+              <li>
+                <a class="terminal-clearance terminal-clearance--containment" href="terminal-session.html">
+                  Containment
+                </a>
+              </li>
+            </ul>
+          </nav>
       </section>
     </main>
   </body>
