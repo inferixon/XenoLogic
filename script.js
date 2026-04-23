@@ -14,45 +14,7 @@ const stationFeedStorageKey = "xenologic:last-station-feed-id";
 const stationFeedSnapshotStorageKey = "xenologic:last-station-feed-snapshot";
 const xenopediaGrid = document.querySelector("[data-xenopedia-grid]");
 
-const xenopediaFallback = [
-  {
-    entry: 1,
-    name: "Glorp",
-    description:
-      "Known for tapping inspection glass in suspiciously regular patterns. Often appears in the station's training reports because it encourages clean implication chains.",
-    threats:
-      "Low under normal observation. Escalates immediately if allowed near office locks, coffee machines, or anything with a blinking confirmation light.",
-    image: "Assets/alien-01.webp",
-  },
-  {
-    entry: 2,
-    name: "Zaxer",
-    description:
-      "A fast-moving archive pest with a talent for creating false causal stories. Excellent for training analysts not to confuse sequence with proof.",
-    threats:
-      "Moderate to paperwork and staff morale. One unattended Zaxer can generate three bad reports, two rumors, and a completely fake emergency sequence.",
-    image: "Assets/alien-02.webp",
-  },
-  {
-    entry: 3,
-    name: "Plunk",
-    description:
-      "A small lifeform with a dramatic instinct for pressing the wrong button at the perfect moment. Frequently used in protocols about contradiction and insufficient information.",
-    threats:
-      "Low, but consistently loud. A startled Plunk can turn a quiet lab into a full alarm rehearsal before anyone confirms what actually happened.",
-    image: "Assets/alien-03.webp",
-  },
-  {
-    entry: 4,
-    name: "Vrex",
-    description:
-      "A territorial observer-class organism that reacts strongly to category errors. Useful for class membership, subclassing, and mistaken generalization examples.",
-    threats:
-      "Situational and highly offended by bad labeling. If you classify a Vrex as office furniture, it will spend the next hour proving you wrong at full volume.",
-    image: "Assets/alien-04.webp",
-  },
-];
-
+// Utility helpers used by the animated station feed flow.
 function wait(durationMs) {
   return new Promise((resolve) => {
     window.setTimeout(resolve, durationMs);
@@ -72,6 +34,7 @@ function isValidFeed(feed) {
   );
 }
 
+// Station feed - load local news data and fall back to a safe default item.
 async function loadStationFeeds() {
   try {
     const response = await fetch("news-feed.json", { cache: "no-store" });
@@ -105,6 +68,7 @@ function pickRandomFeed(stationFeeds, excludedId) {
   return eligibleFeeds[Math.floor(Math.random() * eligibleFeeds.length)];
 }
 
+// Station feed - persist the last rendered item so the page can resume smoothly.
 function readLastStationFeedId() {
   try {
     return Number.parseInt(localStorage.getItem(stationFeedStorageKey) || "", 10);
@@ -142,6 +106,7 @@ function writeStoredFeed(feed) {
   }
 }
 
+// Shared DOM references for navigation and homepage station feed rendering.
 const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
 const stationFeed = document.querySelector("#station-feed");
@@ -149,6 +114,7 @@ const feedTitle = document.querySelector("[data-feed-title]");
 const feedBody = document.querySelector("[data-feed-body]");
 const feedImage = document.querySelector("[data-feed-image]");
 
+// Station feed - write the chosen item into the visible homepage panel.
 function applyFeed(feed) {
   if (!feedTitle || !feedBody || !feedImage || !stationFeed) {
     return;
@@ -171,6 +137,7 @@ function preloadFeedImage(feed) {
   });
 }
 
+// Station feed - swap cards with a preload + fade flow so the image changes cleanly.
 function renderFeed(feed) {
   const commitFeed = () => {
     applyFeed(feed);
@@ -202,6 +169,7 @@ function renderFeed(feed) {
   showFeed();
 }
 
+// Navigation - open and close the mobile menu.
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("nav-open");
@@ -216,6 +184,7 @@ if (navToggle && siteNav) {
   });
 }
 
+// Station feed - boot the rotating homepage news module.
 if (feedTitle && feedBody && feedImage) {
   const storedFeed = readStoredFeed();
 
@@ -242,6 +211,7 @@ if (feedTitle && feedBody && feedImage) {
   });
 }
 
+// Xenopedia - validate each entry before it becomes a visible card.
 function isValidXenoEntry(entry) {
   return Boolean(
     entry &&
@@ -257,25 +227,28 @@ function isValidXenoEntry(entry) {
   );
 }
 
+// Xenopedia - load the local data source and return a usable array of entries.
 async function loadXenopediaEntries() {
-  try {
-    const response = await fetch("xenopedia.json", { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`Xenopedia request failed with status ${response.status}`);
-    }
-
-    const xenopediaEntries = await response.json();
-    if (!Array.isArray(xenopediaEntries)) {
-      throw new Error("Xenopedia data is not an array");
-    }
-
-    const publishedEntries = xenopediaEntries.filter(isValidXenoEntry);
-    return publishedEntries.length ? publishedEntries : xenopediaFallback;
-  } catch {
-    return xenopediaFallback;
+  const response = await fetch("xenopedia.json", { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`Xenopedia request failed with status ${response.status}`);
   }
+
+  const xenopediaEntries = await response.json();
+  if (!Array.isArray(xenopediaEntries)) {
+    throw new Error("Xenopedia data is not an array");
+  }
+
+  const publishedEntries = xenopediaEntries.filter(isValidXenoEntry);
+
+  if (!publishedEntries.length) {
+    throw new Error("Xenopedia data does not contain valid entries");
+  }
+
+  return publishedEntries;
 }
 
+// Xenopedia - format and sort entries before they become cards.
 function formatEntryNumber(entryNumber) {
   return String(entryNumber).padStart(2, "0");
 }
@@ -284,6 +257,62 @@ function sortXenopediaEntries(entries) {
   return [...entries].sort((left, right) => left.entry - right.entry);
 }
 
+function showXenopediaMessage(message, state = "error") {
+  if (!xenopediaGrid) {
+    return;
+  }
+
+  xenopediaGrid.innerHTML = "";
+
+  const status = document.createElement("p");
+  status.className = `xenopedia-status xenopedia-status--${state}`;
+  status.textContent = message;
+  status.setAttribute("role", state === "error" ? "alert" : "status");
+
+  xenopediaGrid.append(status);
+}
+
+// Xenopedia 3D hover - restore the neutral card state when the pointer leaves.
+function resetXenoCardTilt(card) {
+  card.dataset.hover = "false";
+  card.style.setProperty("--xeno-tilt-x", "0deg");
+  card.style.setProperty("--xeno-tilt-y", "0deg");
+  card.style.setProperty("--xeno-hover-x", "50%");
+  card.style.setProperty("--xeno-hover-y", "50%");
+}
+
+// Xenopedia 3D hover - rotate the card slightly based on pointer position.
+function attachXenoCardTilt(card) {
+  resetXenoCardTilt(card);
+
+  card.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch") {
+      return;
+    }
+
+    const bounds = card.getBoundingClientRect();
+    const horizontal = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const vertical = ((event.clientY - bounds.top) / bounds.height) * 100;
+    const rotateY = ((horizontal - 50) / 50) * 2.75;
+    const rotateX = ((50 - vertical) / 50) * 2.75;
+
+    card.dataset.hover = "true";
+    card.style.setProperty("--xeno-hover-x", `${horizontal.toFixed(2)}%`);
+    card.style.setProperty("--xeno-hover-y", `${vertical.toFixed(2)}%`);
+    card.style.setProperty("--xeno-tilt-x", `${rotateX.toFixed(2)}deg`);
+    card.style.setProperty("--xeno-tilt-y", `${rotateY.toFixed(2)}deg`);
+  });
+
+  card.addEventListener("pointerleave", () => {
+    resetXenoCardTilt(card);
+  });
+
+  card.addEventListener("pointercancel", () => {
+    resetXenoCardTilt(card);
+  });
+}
+
+// Xenopedia - build one semantic card from one data object.
 function createXenoCard(entry) {
   const article = document.createElement("article");
   article.className = "xeno-card";
@@ -347,11 +376,19 @@ function createXenoCard(entry) {
     );
   }
 
+  attachXenoCardTilt(article);
+
   return article;
 }
 
+// Xenopedia - render the full array into repeated DOM cards.
 function renderXenopedia(entries) {
   if (!xenopediaGrid) {
+    return;
+  }
+
+  if (!Array.isArray(entries) || !entries.length) {
+    showXenopediaMessage("No Xenopedia entries are available.", "empty");
     return;
   }
 
@@ -362,8 +399,13 @@ function renderXenopedia(entries) {
   });
 }
 
+// Xenopedia - initialize the page by loading data, rendering cards, or showing an error.
 if (xenopediaGrid) {
-  loadXenopediaEntries().then((entries) => {
-    renderXenopedia(entries);
-  });
+  loadXenopediaEntries()
+    .then((entries) => {
+      renderXenopedia(entries);
+    })
+    .catch(() => {
+      showXenopediaMessage("Xenopedia data could not be loaded.");
+    });
 }
