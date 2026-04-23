@@ -277,8 +277,6 @@ function resetXenoCardTilt(card) {
   card.dataset.hover = "false";
   card.style.setProperty("--xeno-tilt-x", "0deg");
   card.style.setProperty("--xeno-tilt-y", "0deg");
-  card.style.setProperty("--xeno-hover-x", "50%");
-  card.style.setProperty("--xeno-hover-y", "50%");
 }
 
 // Xenopedia 3D hover - rotate the card slightly based on pointer position.
@@ -297,8 +295,6 @@ function attachXenoCardTilt(card) {
     const rotateX = ((50 - vertical) / 50) * 2.75;
 
     card.dataset.hover = "true";
-    card.style.setProperty("--xeno-hover-x", `${horizontal.toFixed(2)}%`);
-    card.style.setProperty("--xeno-hover-y", `${vertical.toFixed(2)}%`);
     card.style.setProperty("--xeno-tilt-x", `${rotateX.toFixed(2)}deg`);
     card.style.setProperty("--xeno-tilt-y", `${rotateY.toFixed(2)}deg`);
   });
